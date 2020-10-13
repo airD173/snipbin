@@ -3,6 +3,8 @@ const Snippet = require('../models/snippet')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
+  router.use(express.static(__dirname + '../lib/'))
+  router.use(express.static(__dirname + '../lib/'))
   res.render('snippet/new', { snippet: new Snippet() })
 })
 

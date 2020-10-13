@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMirror</title>
+
+    <link href="./../lib/codemirror.css" rel="stylesheet">
+    <script src="./../lib/codemirror.js"></script>
+</head>
+<body>
+    <textarea id="editor"><p>I am a paragraph</p></textarea>
+
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+            lineNumbers: true
+        })
+    </script>
+</body>
+</html>

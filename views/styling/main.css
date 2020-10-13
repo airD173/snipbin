@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+* {
+  outline: none;
+  font-family: 'Roboto Mono', monospace;
+}
+
+html {
+  background-color: #262833;
+}
+
+button {
+  font-family: 'Roboto Mono', monospace;
+}
+/*# sourceMappingURL=main.css.map */

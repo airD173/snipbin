@@ -1,0 +1,11 @@
+/* main styleheet */
+
+@import url('./main.css');
+
+/* elements */
+
+@import url('./elements/form.css');
+
+/* webpages */
+
+@import url('./elements/new.css');
