@@ -5,10 +5,22 @@
 }
 
 html {
-  background-color: #262833;
+  background-color: #16171E;
 }
 
 button {
+  webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
   font-family: 'Roboto Mono', monospace;
 }
 /*# sourceMappingURL=main.css.map */

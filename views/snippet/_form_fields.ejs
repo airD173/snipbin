@@ -1,17 +1,22 @@
 <div class="container-form">
 
   <div class="inputs">
-    <div class="title">
-      <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off">
+    <div class="normal">
+      <div class="title">
+        <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="description">
+        <textarea name="description" id="description" class="form-description"><%= snippet.description %></textarea>
+      </div>
     </div>
-    <div class="description">
-      <textarea name="description" id="description" class="form-description"><%= snippet.description %></textarea>
-    </div>
+    
     <div class="form-group">
-      <!-- <textarea required name="code" id="markup" class="form-code"><%= snippet.code %></textarea> -->
+      <textarea required name="code" id="editor" class="editor"></textarea>
     </div>
   </div>
 
-  <!-- <a href="/" class="btn btn-secondary">Cancel</a>-->
-  <button type="submit" class="create">Create Snippet</button>
+  <div class="buttons">
+    <!-- <a href="/" class="btn btn-secondary">Cancel</a>-->
+    <button type="submit" class="create">Create Snippet</button>
+  </div>
 </div>
