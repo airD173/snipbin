@@ -3,15 +3,15 @@
   <div class="inputs">
     <div class="normal">
       <div class="title">
-        <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off" spellcheck="false">
+        <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off" spellcheck="false" placeholder="title">
       </div>
       <div class="description">
-        <textarea name="description" id="description" class="form-description"><%= snippet.description %></textarea>
+        <textarea name="description" id="description" class="form-description" placeholder="description"><%= snippet.description %></textarea>
       </div>
     </div>
     
     <div class="form-group">
-      <textarea required name="code" id="editor" class="editor"></textarea>
+      <textarea required id="editor" class="editor""></textarea>
     </div>
   </div>
 

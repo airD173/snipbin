@@ -10,6 +10,14 @@
   padding: 10px;
 }
 
+#title {
+  font-size: 20px;
+}
+
+#description {
+  font-size: 18px;
+}
+
 .title, .description {
   padding: 10px;
 }
