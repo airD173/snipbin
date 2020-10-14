@@ -1,16 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 * {
   outline: none;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 html {
-  background-color: #16171E;
+  background-color: #16171e;
 }
 
 button {
-  webkit-touch-callout: none;
-  /* iOS Safari */
   -webkit-user-select: none;
   /* Safari */
   /* Konqueror HTML */
@@ -21,6 +19,6 @@ button {
   user-select: none;
   /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 
-$backgroundColour: #16171E;
+$backgroundColour: #16171e;
 
 * {
-    outline: none;
-    font-family: 'Roboto Mono', monospace;
+  outline: none;
+  font-family: "Roboto Mono", monospace;
 }
 
 html {
-    background-color: $backgroundColour;
+  background-color: $backgroundColour;
 }
 
 button {
-    webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-    font-family: 'Roboto Mono', monospace;
+  font-family: "Roboto Mono", monospace;
 }

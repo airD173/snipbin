@@ -41,8 +41,10 @@ function saveArticleAndRedirect(path) {
     snippet.code = req.body.code
     try {
       snippet = await snippet.save()
+      console.log('Paste Success!')
       res.redirect(`/snippet/${snippet.id}`)
     } catch (e) {
+      console.log(e)
       res.render(`snippet/${path}`, { snippet: snippet })
     }
   }

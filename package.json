@@ -6,7 +6,13 @@
   "scripts": {
     "devStart": "nodemon server.js"
   },
-  "keywords": ["PasteBin", "HateBin", "Code Pasting", "HasteBin", "PasteMyst"],
+  "keywords": [
+    "PasteBin",
+    "HateBin",
+    "Code Pasting",
+    "HasteBin",
+    "PasteMyst"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
