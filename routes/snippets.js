@@ -1,5 +1,6 @@
 const express = require('express')
 const Snippet = require('../models/snippet')
+const Snips = require('./../models/snippet')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
@@ -39,12 +40,13 @@ function saveArticleAndRedirect(path) {
     snippet.title = req.body.title
     snippet.description = req.body.description
     snippet.code = req.body.code
+
+    
+    
     try {
       snippet = await snippet.save()
-      console.log('Paste Success!')
       res.redirect(`/snippet/${snippet.id}`)
     } catch (e) {
-      console.log(e)
       res.render(`snippet/${path}`, { snippet: snippet })
     }
   }

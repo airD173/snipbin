@@ -1,11 +1,14 @@
 /* main styleheet */
 
-@import url('./main.css');
+@import url("./main.css");
 
 /* elements */
 
-@import url('./elements/form.css');
+@import url("./elements/form.css");
+@import url("./elements/links.css");
+@import url("./elements/footer.css");
 
 /* webpages */
 
-@import url('./pages/new.css');
+@import url("./pages/new.css");
+@import url("./pages/show.css");

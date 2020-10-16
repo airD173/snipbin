@@ -1,16 +1,21 @@
- 
-<div class="form-group">
-  <label for="title">Title</label>
-  <input required value="<%= snippet.title %>" type="text" name="hoewrhjewoirjoweirjeowir" id="title" class="form-control" autocomplete="off">
-</div>
-<div class="form-group">
-  <label for="description">Description (optional)</label>
-  <textarea name="description" id="description" class="form-control"><%= snippet.description %></textarea>
-</div>
-<div class="form-group">
-  <label for="markdown">Code</label>
-  <textarea required id="editor"><%= snippet.code %></textarea>
-</div>
+<div class="container-form">
 
-<!-- <a href="/" class="btn btn-secondary">Cancel</a>-->
-<button type="submit" class="btn btn-primary">Create Snippet</button>
+  <div class="inputs">
+    <div class="normal">
+      <div class="title">
+        <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off" spellcheck="false" placeholder="snippet title">
+      </div>
+      <div class="description">
+        <textarea name="description" id="description" class="form-description" placeholder="snippet description"><%= snippet.description %></textarea>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <textarea required name="code" id="code" class="form-code" rows="15"></textarea>
+
+      <div class="button">
+        <button type="submit" class="create">Create Snippet</button>
+      </div>
+    </div>
+  </div>
+</div>

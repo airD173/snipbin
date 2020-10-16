@@ -1,5 +1,12 @@
 const mongoose = require('mongoose')
 
+const snips = new mongoose.Schema({
+  numOfPastes: {
+    type: Int32Array,
+    required: true
+  }
+})
+
 const snipSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -20,3 +27,4 @@ const snipSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Snippet', snipSchema)
+module.exports = mongoose.model('Snips', snips)

@@ -1,0 +1,16 @@
+.twitter {
+  color: #add8e6;
+}
+
+.github {
+  color: #9e9e9e;
+}
+
+.twitter:hover {
+  color: #608491;
+}
+
+.github:hover {
+  color: #6d6d6d;
+}
+/*# sourceMappingURL=links.css.map */
