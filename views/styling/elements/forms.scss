@@ -1,0 +1,19 @@
+$darkColour: #282a36;
+
+.form-title,
+.form-description {
+	color: white;
+	width: 35%;
+	font-size: 20px;
+	border: none;
+	background: $darkColour;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 7px;
+	border-radius: 12px;
+}
+
+.form-description {
+	font-size: 17px !important;
+}

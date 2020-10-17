@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+* {
+	outline: none;
+	font-family: "Roboto Mono", monospace;
+}
+
+button {
+	font-family: "Roboto Mono", monospace;
+
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+textarea {
+	resize: none;
+}

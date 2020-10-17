@@ -1,1 +1,30 @@
-/* No CSS *//*# sourceMappingURL=header.css.map */
+.new-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 65px;
+  color: #fcb86d;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.description-website {
+  font-weight: 900;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #60c6ee;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.warning {
+  text-align: center;
+  padding: 10px;
+  background: #c24f4f;
+  border-radius: 5px;
+  color: #16171e;
+}
+/*# sourceMappingURL=header.css.map */

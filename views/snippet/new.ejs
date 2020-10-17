@@ -7,7 +7,9 @@
   <title>SnipBin</title>
 
   <link rel="stylesheet" href="/all.css" type="text/css" >
+  <link rel="stylesheet" href="/codemirror.css" type="text/css">
   <link rel="stylesheet" href="/dracula.css" type="text/css">
+
 </head>
 <body>
     <%- include('_header') %>
@@ -22,7 +24,8 @@
 
 <script>
   var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
-    lineNumbers: true
+    lineNumbers: true,
+    theme: "dracula"
   })
 
   function addCode() {
