@@ -18,7 +18,7 @@ This was my main motivation behind this project, I was going to combine all the 
 # Getting started
 
 ## Prequistes
-  -[npm]
+  - [npm]
   
 ## Installation
 
