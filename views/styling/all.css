@@ -1,0 +1,18 @@
+/* Main Stylesheet */
+
+@import url("./other/main.css");
+
+/* Elements */
+
+@import url("./elements/footer.css");
+@import url("./elements/forms.css");
+@import url("./elements/header.css");
+
+/* Pages */
+
+@import url("./pages/new.css");
+@import url("./pages/show.css");
+
+/* Libraries */
+
+@import url("./../../lib/codemirror/style/codemirror.css");
