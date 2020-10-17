@@ -11,16 +11,10 @@
   <link rel="stylesheet" href="/dracula.css" type="text/css">
 </head>
 <body>
-  <div class="container">
-    <a class="new-title">SnipBin</a>
-    <p class="description-website">A blazing fast, lightweight, elegant and open-source tool for pasting, sharing and storing code snippets.</p>
-  </div>
-  <div class="warning">
-      This is an early alpha version of the website. If you spot any bugs, please contact me via <a href="https://twitter.com/HarshhhDev" class="twitter">Twitter</a>, or open up an issue on <a href="https://github.com/harshhhdev/snip-bin/issues" class="github">GitHub</a>
-  </div>
+    <%- include('_header') %>
 
     <form action="/snippet" method="POST">
-      <%- include('_form_fields') %>
+      <%- include('_snippet') %>
     </form>
   </div>
 </body>
