@@ -8,12 +8,12 @@ I'm tired of using PasteBin for sharing code, it's absolutely littered with ads,
 
 This was my main motivation behind this project, I was going to combine all the features from my favourite code pasting websites ([HateBin], [PasteMyst], and sadly, [PasteBin]), and turn them into a large, open-source, and customizible paste website.
 
-# Important 
+# Important
 
- - [License]
- - [Contributing] 
- - [Sponsor]
- - [Code of Conduct]
+- [License]
+- [Contributing]
+- [Sponsor]
+- [Code of Conduct]
 
 # Building
 
@@ -22,17 +22,17 @@ This was my main motivation behind this project, I was going to combine all the 
 
 ```json
 {
-    "mongoconnectionid": "mongodb+srv://username:passwords@"
+	"mongoconnectionid": "mongodb+srv://username:passwords@"
 }
 ```
 
 3. run `devStart` (`npm run devStart`)
 4. Navigate to `http://localhost:5000/` in your browser.
 
-[HateBin]: https://hatebin.com/
-[PasteMyst]: https://paste.myst.rs/
-[PasteBin]: https://pastebin.com/
-[License]: https://opensource.org/licenses/MIT
-[Contributing]: https://github.com/harshhh-dev/snip-bin/blob/main/CONTRIBUTING.md
-[Sponsor]: https://www.patreon.com/harshdev
-[Code of Conduct]: https://github.com/harshhh-dev/snip-bin/blob/main/CODE_OF_CONDUCT.md
+[hatebin]: https://hatebin.com/
+[pastemyst]: https://paste.myst.rs/
+[pastebin]: https://pastebin.com/
+[license]: https://opensource.org/licenses/MIT
+[contributing]: https://github.com/harshhhdev/snip-bin/blob/main/CONTRIBUTING.md
+[sponsor]: https://www.patreon.com/harshdev
+[code of conduct]: https://github.com/harshhhdev/snip-bin/blob/main/CODE_OF_CONDUCT.md
