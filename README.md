@@ -22,7 +22,7 @@ This was my main motivation behind this project, I was going to combine all the 
   
 ## Installation
 
-  - Clone the repository `https://github.com/harshhhdev/snip-bin.git`
+  - Clone the repository `git clone https://github.com/harshhhdev/snip-bin.git`
   - Install the needed npm pacakges `npm install`
   - Create a new cluster at [MongoDB atlas]
   - Create a new file called `mongoclient.json`
