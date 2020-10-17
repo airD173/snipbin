@@ -8,13 +8,14 @@
       <div class="description">
         <textarea name="description" id="description" class="form-description" placeholder="snippet description"><%= snippet.description %></textarea>
       </div>
-    </div>
-    
-    <div class="form-group">
-      <textarea required name="code" id="code" class="form-code" rows="15"></textarea>
-
-      <div class="button">
-        <button type="submit" class="create">Create Snippet</button>
+      <div class="form-group">
+        <textarea id="editor"></textarea>
+  
+        <textarea required name="code" id="code"></textarea>
+  
+        <div class="button">
+          <button class="create" onclick="addCode()" type="submit">Create Snippet</button>
+        </div>
       </div>
     </div>
   </div>

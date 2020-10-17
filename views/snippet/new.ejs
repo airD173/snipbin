@@ -25,4 +25,17 @@
   </div>
 </body>
 
+<script src="/codemirror.js"></script>
+
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
+    lineNumbers: true
+  })
+
+  function addCode() {
+    var text = editor.getValue()
+    document.getElementById('code').innerHTML = text;
+  }
+</script>
+
 </html>
