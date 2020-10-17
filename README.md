@@ -44,6 +44,21 @@ This was my main motivation behind this project, I was going to combine all the 
  - [Love]
  - [Sass]
  
+# Contact 
+
+## Email
+harshhh.singh.personal@gmail.com
+
+## Twitter
+https://twitter.com/HarshhhDev
+
+## Project Link
+
+https://github.com/harshhhdev/snip-bin
+
+# Roadmap
+
+See a list of the [open issues] for a list of wanted/proposed features and known bugs.
 
 [hatebin]: https://hatebin.com/
 [pastemyst]: https://paste.myst.rs/
