@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const app = express()
 const Snippet = require('./models/snippet')
 
-cont PORT = process.env.PORT || '5000'
+const PORT = process.env.PORT || '5000'
 
 const mongoconnection = require('./mongoclient.json')
 
