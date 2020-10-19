@@ -5,6 +5,8 @@ const methodOverride = require('method-override')
 const app = express()
 const Snippet = require('./models/snippet')
 
+cont PORT = process.env.PORT || '5000'
+
 const mongoconnection = require('./mongoclient.json')
 
 mongoose.connect(mongoconnection.mongoconnectionid, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, () => console.log('Connected to DB!'))
@@ -29,6 +31,4 @@ app.get('/', async (req, res) => {
 
 app.use('/snippet', snippetRouter)
 
-app.listen(process.env.PORT || 5000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+app.set("port", PORT)
