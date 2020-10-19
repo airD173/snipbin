@@ -1,1 +1,31 @@
-/* No CSS *//*# sourceMappingURL=footer.css.map */
+.footer-text {
+  color: #fcb86d;
+}
+
+.footer {
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #282a36;
+}
+
+.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.snips-created {
+  color: #fcb86d;
+}
+
+.string {
+  color: greenyellow !important;
+}
+/*# sourceMappingURL=footer.css.map */

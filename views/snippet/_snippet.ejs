@@ -3,19 +3,17 @@
   <div class="inputs">
     <div class="normal">
       <div class="title">
-        <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off" spellcheck="false" placeholder="snippet title">
+        <input required value="<%= snippet.title %>" type="text" name="title" id="title" class="form-title" autocomplete="off" spellcheck="false" placeholder="title = new Title()">
       </div>
       <div class="description">
-        <textarea name="description" id="description" class="form-description" placeholder="snippet description" rows="3"><%= snippet.description %></textarea>
+        <textarea name="description" id="description" class="form-description" placeholder="description = new optional.Description()" rows="3"><%= snippet.description %></textarea>
       </div>
       <div class="form-group">
         <textarea id="editor"></textarea>
   
         <textarea required name="code" id="code" style="display: none;"></textarea>
       </div>
-      <div class="button">
-        <button class="create" onclick="addCode()" type="submit">Create Snippet</button>
-      </div>
+      <%- include('_footer.ejs') %>
     </div>
   </div>
 </div>

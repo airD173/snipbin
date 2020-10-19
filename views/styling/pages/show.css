@@ -1,1 +1,54 @@
-/* No CSS *//*# sourceMappingURL=show.css.map */
+.snippet-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #fcb86d;
+}
+
+.snippet-description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #60c6ee;
+}
+
+.snippet-code {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  max-width: 1000px;
+  color: white;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #282a36;
+  border: 2px solid #fcb86d !important;
+}
+
+.view-code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px 0px;
+}
+
+.snippet-created {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #85ffd0;
+}
+/*# sourceMappingURL=show.css.map */

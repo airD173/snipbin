@@ -15,4 +15,22 @@
 .github:hover {
   color: #272727;
 }
+
+.source {
+  text-decoration: none;
+  color: #5c5c5c;
+}
+
+.source:hover {
+  color: #272727;
+}
+
+.harsh {
+  text-decoration: none;
+  color: #60c6ee;
+}
+
+.harsh:hover {
+  color: #45a4ca;
+}
 /*# sourceMappingURL=links.css.map */

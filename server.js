@@ -1,9 +1,9 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const Snippet = require('./models/snippet')
 const snippetRouter = require('./routes/snippets')
 const methodOverride = require('method-override')
 const app = express()
+const Snippet = require('./models/snippet')
 
 const mongoconnection = require('./mongoclient.json')
 
@@ -14,13 +14,18 @@ app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
 app.use(express.static(__dirname + '/views/styling'))
+app.use(express.static(__dirname + '/images'))
 app.use(express.static(__dirname + '/lib/codemirror/js'))
 app.use(express.static(__dirname + '/lib/codemirror/style'))
 app.use(express.static(__dirname + '/lib/codemirror/themes'))
+app.use(express.static(__dirname + '/lib/highlight.js/styles'))
+app.use(express.static(__dirname + '/lib/codemirror/themes'))
 
 app.get('/', async (req, res) => {
-  const snippets = await Snippet.find().sort({ createdAt: 'desc' })
-  res.render('snippet/index', { snippets: snippets })
+  // const snippets = await Snippet.find().sort({ createdAt: 'desc' })
+  // res.render('snippet/index', { snippets: snippets })
+
+  res.render('snippet/new', { snippet: new Snippet() })
 })
 
 app.use('/snippet', snippetRouter)

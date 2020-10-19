@@ -6,10 +6,16 @@ $dangerColour: #c24f4f;
 $backgroundColour: #16171e;
 
 .new-title {
+	letter-spacing: 5px;
 	display: flex;
 	font-size: 65px;
 	color: $primaryColour;
 	justify-content: center;
+	text-decoration: none;
+}
+
+.new-title:hover {
+	color: $secondaryColour;
 }
 
 .description-website {

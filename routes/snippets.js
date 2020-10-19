@@ -1,10 +1,9 @@
 const express = require('express')
 const Snippet = require('../models/snippet')
+const SnipCount = require('../models/snippetsCreated')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
-  router.use(express.static(__dirname + '../lib/'))
-  router.use(express.static(__dirname + '../lib/'))
   res.render('snippet/new', { snippet: new Snippet() })
 })
 
@@ -20,6 +19,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res, next) => {
   req.snippet = new Snippet()
+  
   next()
 }, saveArticleAndRedirect('new'))
 
@@ -39,7 +39,7 @@ function saveArticleAndRedirect(path) {
     snippet.title = req.body.title
     snippet.description = req.body.description
     snippet.code = req.body.code
-        
+    
     try {
       snippet = await snippet.save()
       res.redirect(`/snippet/${snippet.id}`)
