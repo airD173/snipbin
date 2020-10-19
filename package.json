@@ -4,8 +4,7 @@
   "description": "A lightweight, open-source code pasting tool.",
   "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "start": "npm run devStart"
+    "devStart": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
