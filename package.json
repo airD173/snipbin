@@ -1,8 +1,8 @@
 {
-  "name": "markdown-blog",
+  "name": "snip-bin",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A lightweight, o",
+  "main": "server.js",
   "scripts": {
     "devStart": "nodemon server.js"
   },
