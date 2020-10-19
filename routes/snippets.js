@@ -1,6 +1,5 @@
 const express = require('express')
 const Snippet = require('../models/snippet')
-const SnipCount = require('../models/snippetsCreated')
 const router = express.Router()
 
 router.get('/new', (req, res) => {
