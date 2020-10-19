@@ -14,7 +14,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 
 app.use(express.static(__dirname + '/views/styling'))
-app.use(express.static(__dirname + '/images'))
 app.use(express.static(__dirname + '/lib/codemirror/js'))
 app.use(express.static(__dirname + '/lib/codemirror/style'))
 app.use(express.static(__dirname + '/lib/codemirror/themes'))
