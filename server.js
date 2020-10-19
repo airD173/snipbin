@@ -18,7 +18,6 @@ app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/views/styling'))
 app.use(express.static(__dirname + '/lib/codemirror/js'))
 app.use(express.static(__dirname + '/lib/codemirror/style'))
-app.use(express.static(__dirname + '/lib/codemirror/themes'))
 app.use(express.static(__dirname + '/lib/highlight.js/styles'))
 app.use(express.static(__dirname + '/lib/codemirror/themes'))
 
