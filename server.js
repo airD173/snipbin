@@ -5,7 +5,7 @@ const methodOverride = require('method-override')
 const app = express()
 const Snippet = require('./models/snippet')
 
-mongoose.connect('mongodb+srv://HarshTest:82374jcps@snipbin.k5b8h.mongodb.net/SnipBin?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, () => console.log('Connected to DB!'))
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://HarshTest:82374jcps@snipbin.k5b8h.mongodb.net/SnipBin?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, () => console.log('Connected to DB!'))
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
