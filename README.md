@@ -15,19 +15,50 @@ This was my main motivation behind this project, I was going to combine all the 
 - [Sponsor]
 - [Code of Conduct]
 
-# Building
+# Getting started
 
-1. Install the required npm packages (`npm install`)
-2. Create a `mongoclient.json` file, and create a cluster, and add your link to that file.
+## Prequistes
+  - [npm]
+  
+## Installation
+
+  - Clone the repository `git clone https://github.com/harshhhdev/snip-bin.git`
+  - Install the needed npm pacakges `npm install`
+  - Create a new cluster at [MongoDB atlas]
+  - Create a new file called `mongoclient.json`
+  - Copy paste this in, and put in your Mongo database connection.
 
 ```json
 {
 	"mongoconnectionid": "mongodb+srv://username:passwords@"
 }
 ```
+  - Run nodemon. (`npm run devStart`)
+  - Navigate to [localhost:5000] in your browser.
 
-3. run `devStart` (`npm run devStart`)
-4. Navigate to `http://localhost:5000/` in your browser.
+# Built with
+
+ - [MongoDB]
+ - [Express.js]
+ - [Node.js]
+ - [Love]
+ - [Sass]
+ 
+# Contact 
+
+## Email
+harshhh.singh.personal@gmail.com
+
+## Twitter
+https://twitter.com/HarshhhDev
+
+## Project Link
+
+https://github.com/harshhhdev/snip-bin
+
+# Roadmap
+
+See a list of the [open issues] for a list of wanted/proposed features and known bugs.
 
 [hatebin]: https://hatebin.com/
 [pastemyst]: https://paste.myst.rs/
@@ -36,3 +67,11 @@ This was my main motivation behind this project, I was going to combine all the 
 [contributing]: https://github.com/harshhhdev/snip-bin/blob/main/CONTRIBUTING.md
 [sponsor]: https://www.patreon.com/harshdev
 [code of conduct]: https://github.com/harshhhdev/snip-bin/blob/main/CODE_OF_CONDUCT.md
+[npm]: https://www.npmjs.com/get-npm
+[MongoDB atlas]: https://cloud.mongodb.com/
+[localhost:5000]: http://localhost:5000/
+[MongoDB]: https://mongodb.org/
+[Express.js]: https://expressjs.com/
+[Node.js]: https://nodejs.org/en/
+[Love]: https://www.dictionary.com/browse/love
+[Sass]: https://sass-lang.com/
