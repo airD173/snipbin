@@ -24,8 +24,5 @@
     "mongoose": "^5.9.4",
     "server": "^1.0.30",
     "slugify": "^1.4.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
   }
 }
