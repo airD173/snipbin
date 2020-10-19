@@ -6,10 +6,11 @@
   "scripts": {
     "devStart": "nodemon server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["PasteBin", "PasteMyst", "HasteBin"],
+  "author": "Harsh Singh",
+  "license": "MIT",
   "dependencies": {
+    "nodemon": "^2.0.2",
     "dompurify": "^2.0.8",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
@@ -18,8 +19,5 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.9.4",
     "slugify": "^1.4.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
   }
 }
