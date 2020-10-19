@@ -4,11 +4,12 @@
   "description": "A lightweight, open-source code pasting tool.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
-    },
+    "devStart": "nodemon server.js",
+    "start": "web: nodemon server.js"
+  },
   "keywords": [],
-  "author": "Harsh Singh and Contributors",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "dompurify": "^2.0.8",
     "ejs": "^3.0.1",
