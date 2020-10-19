@@ -1,15 +1,10 @@
 {
   "name": "snip-bin",
   "version": "1.0.0",
-  "description": "A lightweight, o",
+  "description": "A lightweight, open-source code pasting tool.",
   "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "devStart": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
