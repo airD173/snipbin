@@ -4,7 +4,12 @@
   "description": "A lightweight, open-source code pasting tool.",
   "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +22,7 @@
     "marked": "^0.8.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.9.4",
+    "server": "^1.0.30",
     "slugify": "^1.4.0"
   },
   "devDependencies": {

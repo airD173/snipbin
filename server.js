@@ -7,8 +7,6 @@ const Snippet = require('./models/snippet')
 
 const PORT = process.env.PORT || '5000'
 
-const mongoconnection = require('./mongoclient.json')
-
 mongoose.connect('mongodb+srv://HarshTest:82374jcps@snipbin.k5b8h.mongodb.net/SnipBin?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, () => console.log('Connected to DB!'))
 
 app.set('view engine', 'ejs')
