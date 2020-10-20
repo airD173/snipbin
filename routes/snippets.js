@@ -14,19 +14,19 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res, next) => {
   req.snippet = new Snippet()
   next()
-}, saveArticleAndRedirect('new'))
+}, saveAndRedirect('/'))
 
 router.put('/:id', async (req, res, next) => {
   req.snippet = await Snippet.findById(req.params.id)
   next()
-}, saveArticleAndRedirect('edit'))
+}, saveAndRedirect('edit'))
 
 router.delete('/:id', async (req, res) => {
   await Snippet.findByIdAndDelete(req.params.id)
   res.redirect('/')
 })
 
-function saveArticleAndRedirect(path) {
+function saveAndRedirect(path) {
   return async (req, res) => {
     let snippet = req.snippet
     snippet.title = req.body.title
@@ -34,9 +34,8 @@ function saveArticleAndRedirect(path) {
     snippet.code = req.body.code
 
     try {
-      console.log('trying to save.')
       snippet = await snippet.save()
-      res.redirect(`https://snip-bin.herokuapp.com/${snippet.id}`)
+      res.redirect(`snippet/${snippet.id}`)
     } catch (e) {
       console.log(e)
       res.render(`snippet/${path}`, { snippet: snippet })
