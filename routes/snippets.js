@@ -13,7 +13,6 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res, next) => {
   req.snippet = new Snippet()
-
   next()
 }, saveArticleAndRedirect('new'))
 
@@ -35,8 +34,9 @@ function saveArticleAndRedirect(path) {
     snippet.code = req.body.code
 
     try {
+      console.log('trying to save.')
       snippet = await snippet.save()
-      res.redirect(`/${snippet.id}`)
+      res.redirect(`https://snip-bin.herokuapp.com/${snippet.id}`)
     } catch (e) {
       console.log(e)
       res.render(`snippet/${path}`, { snippet: snippet })
