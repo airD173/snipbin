@@ -4,9 +4,7 @@ A blazing fast, lightweight, open-source and elegant alternative to PasteBin.
 
 # About
 
-I'm tired of using PasteBin for sharing code, it's absolutely littered with ads, bad UI, and don't even mention the light theme...
-
-This was my main motivation behind this project, I was going to combine all the features from my favourite code pasting websites ([HateBin], [PasteMyst], and sadly, [PasteBin]), and turn them into a large, open-source, and customizible paste website.
+I'm tired of using PasteBin for sharing code, it's absolutely littered with ads, bad UI, and don't even mention the light theme... introducing, SnipBin! SnipBin is a very lightweight and open source code pasting website which does make you want to gouge your eyes out with a grapefruit for when you look at it (take notes, [PasteBin]) and combines simplicity and elegance. 
 
 # Important
 
