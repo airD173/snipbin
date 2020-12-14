@@ -1,0 +1,26 @@
+@import url("./components/header.css");
+@import url("./components/editor.css");
+@import url("./components/scrollbar.css");
+
+@import url("./pages/view.css");
+
+@import url("./other/fonts.css");
+@import url("./other/colour.css");
+
+* {
+   font-family: monospace;
+   font-weight: 500;
+}
+
+body {
+   background: #090C1B;
+
+   --main: #64FF8F;
+   --white: #F8F8F8;
+   --light: #282A36;
+}
+
+::selection {
+   background: var(--main);
+   color: var(--white);
+}
