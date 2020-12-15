@@ -4,7 +4,7 @@ const snippetRouter = require('./routes/snippets.js')
 const methodOverride = require('method-override')
 const app = express()
 const Snippet = require('./models/snippet')
-require('dotenv').config();
+require('dotenv').config()
 
 mongoose.connect(process.env.MONGO_CONNECTION, {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
