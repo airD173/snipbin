@@ -17,16 +17,29 @@
   </div>
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script>
   var editor = CodeMirror.fromTextArea(document.getElementById('editor'), {
     lineNumbers: true,
     theme: "dracula",
-    lineWrapping: true
+    lineWrapping: true,
+    matchBrackets: true
   })
 
   function addCode() {
     var text = editor.getValue()
-    document.getElementById('code').innerHTML = text;
+    const words = text.split(' ').length
+    
+    if (words <= 1000) {
+      document.getElementById('code').value = text
+    } else if (words > 1000) {
+      console.log ('This is too long! and that also happens to be what she said!')
+      console.log ('If you want to be able to post longer scripts and are feeling generous maybe donate to my broke ass.')
+      console.log ('or use pastemyst sed lyf')
+      console.log(words)
+
+      document.getElementsByClassName('warning')[0].style.display = "block"
+    }
   }
 </script>
 

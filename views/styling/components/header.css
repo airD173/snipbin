@@ -26,3 +26,9 @@ header {
    padding-right: 20px;
    user-select: none;
 }
+
+.warning {
+   font-family: productSans;
+   color: #ff6464;
+   display: none;
+}

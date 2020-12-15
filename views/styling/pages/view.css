@@ -21,4 +21,5 @@
    min-height: 60vh;
    display: block;
    margin: auto;
+   word-wrap: break-word;
 }
