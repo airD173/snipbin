@@ -10,6 +10,8 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
 }, () => console.log('Connected to Database.'))
 
+console.log(process.env.MONGO_CONNECTION)
+
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
