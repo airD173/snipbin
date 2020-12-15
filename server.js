@@ -4,8 +4,11 @@ const snippetRouter = require('./routes/snippets.js')
 const methodOverride = require('method-override')
 const app = express()
 const Snippet = require('./models/snippet')
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://Harsh:Harsh@harshdev.k5b8h.mongodb.net/HarshDev?retryWrites=true&w=majority', { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, () => console.log('Connected to DB!'))
+mongoose.connect(process.env.MONGO_CONNECTION, {
+  useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+}, () => console.log('Connected to Database.'))
 
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
