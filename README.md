@@ -17,47 +17,18 @@ I'm tired of using PasteBin for sharing code, it's absolutely littered with ads,
 
 ## Prequistes
   - [npm]
+  - [Node.js]
   
 ## Installation
 
   - Clone the repository `git clone https://github.com/harshhhdev/snip-bin.git`
   - Install the needed npm pacakges `npm install`
   - Create a new cluster at [MongoDB atlas]
-  - Create a new file called `mongoclient.json`
-  - Copy paste this in, and put in your Mongo database connection.
-
-```json
-{
-	"mongoconnectionid": "mongodb+srv://username:passwords@"
-}
-```
+  - Rename `.env.Example` to `.env`
+  - Put in your Mongo database connection.
   - Run nodemon. (`npm run devStart`)
   - Navigate to [localhost:5000] in your browser.
-
-# Built with
-
- - [MongoDB]
- - [Express.js]
- - [Node.js]
- - [Love]
- - [Sass]
  
-# Contact 
-
-## Email
-harshhh.singh.personal@gmail.com
-
-## Twitter
-https://twitter.com/HarshhhDev
-
-## Project Link
-
-https://github.com/harshhhdev/snip-bin
-
-# Roadmap
-
-See a list of the [open issues] for a list of wanted/proposed features and known bugs.
-
 [hatebin]: https://hatebin.com/
 [pastemyst]: https://paste.myst.rs/
 [pastebin]: https://pastebin.com/
