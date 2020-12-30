@@ -2,6 +2,10 @@
 
 A blazing fast, lightweight, open-source and elegant alternative to PasteBin.
 
+# Demo
+
+A live demo can be found [here](https://snipbin.herokuapp.com/)
+
 # Important
 
 - [License]
