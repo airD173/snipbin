@@ -1,0 +1,55 @@
+{
+  "version": "0.0.1",
+  "main": "dist/src/server.js",
+  "type": "module",
+  "repository": "https://github.com/harshhhdev/snip-bin",
+  "author": "Harsh Singh <hi.harsh@protonmail.ch>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.2",
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "dependencies": {
+    "@autotelic/fastify-opentelemetry": "^0.13.0",
+    "@nexus/schema": "^0.20.1",
+    "@opentelemetry/api": "^1.0.0",
+    "@opentelemetry/context-async-hooks": "^0.21.0",
+    "@opentelemetry/core": "^0.21.0",
+    "@opentelemetry/exporter-collector": "^0.21.0",
+    "@opentelemetry/instrumentation-graphql": "^0.21.0",
+    "@opentelemetry/node": "^0.21.0",
+    "@opentelemetry/resources": "^0.21.0",
+    "@opentelemetry/tracing": "^0.21.0",
+    "@prisma/client": "^2.24.1",
+    "@sentry/node": "^6.7.1",
+    "altair-fastify-plugin": "^4.0.6",
+    "apollo-server-express": "^2.25.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "fastify": "^3.18.0",
+    "fastify-cors": "^6.0.1",
+    "graphql": "^15.5.0",
+    "mercurius": "^7.9.0",
+    "nexus": "^1.0.0",
+    "nexus-prisma": "^0.28.0",
+    "prisma": "^2.24.1",
+    "rxjs": "^7.1.0"
+  },
+  "scripts": {
+    "dev": "nodemon dist/src/index.js",
+    "watch": "tsc -w",
+    "gen": "prisma generate",
+    "migrate": "prisma migrate dev --name init",
+    "migrate:deploy": "prisma migrate deploy",
+    "push": "prisma db push --preview-feature",
+    "nexus": "nodemost dist/src/schema.js",
+    "clean": "rm -r dist"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  }
+}

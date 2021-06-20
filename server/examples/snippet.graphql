@@ -1,0 +1,10 @@
+{
+  "data": {
+    "createSnippet": {
+      "id": "2sh8w",
+      "language": "javascript",
+      "title": "GraphQL Test",
+      "code": "const Harsh = Human"
+    }
+  }
+}

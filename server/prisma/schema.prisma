@@ -1,0 +1,21 @@
+datasource db {
+    url      = env("DATABASE_URL")
+    provider = "postgresql"
+}
+
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["nApi"]
+}
+
+generator nexusPrisma {
+    provider = "nexus-prisma"
+}
+
+model snippets {
+    id        String   @id
+    title     String
+    code      String
+    language  String
+    createdat DateTime @default(now())
+}
