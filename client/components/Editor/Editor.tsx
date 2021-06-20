@@ -6,7 +6,15 @@ import Create from '@components/Create'
 
 import { gql, useMutation } from 'urql'
 import { withUrqlClient } from 'next-urql'
+import { useRouter } from 'next/router'
 import { nanoid } from 'nanoid'
+
+export type Result = {
+  id: string
+  title: string
+  code: string
+  language: string
+}
 
 const Paste = gql`
   mutation ($id: String!, $language: String!, $title: String!, $code: String!) {
@@ -27,6 +35,8 @@ import 'codemirror/keymap/sublime'
 const Editor: React.FC = () => {
   S.White()
 
+  const router = useRouter()
+
   const TitleRef = React.useRef<HTMLInputElement>(null)
   const LanguageRef = React.useRef<HTMLSelectElement>(null)
   const [codeValue, setCodeValue]: any = React.useState()
@@ -42,7 +52,10 @@ const Editor: React.FC = () => {
     }
 
     createPaste(variables)
-      .then((result) => console.log(result))
+      .then((result: Result) => {
+        router.push(result.id)
+        console.log(result)
+      })
       .catch((err) => console.log(err))
   }
 
