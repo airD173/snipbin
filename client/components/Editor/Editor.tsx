@@ -52,10 +52,7 @@ const Editor: React.FC = () => {
     }
 
     createPaste(variables)
-      .then((result: Result) => {
-        router.push(result.id)
-        console.log(result)
-      })
+      .then((result: any) => router.push(result.data.createSnippet.id))
       .catch((err) => console.log(err))
   }
 

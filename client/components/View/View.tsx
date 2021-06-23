@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 
 import { useRouter } from 'next/router'
 
@@ -20,6 +20,7 @@ const Paste = gql`
       id
       title
       code
+      language
     }
   }
 `
@@ -35,10 +36,11 @@ const View: React.FC = () => {
     },
   })
 
-  console.log(pasteResult.data)
-  console.log(pasteResult.error)
-
   if (pasteResult.data != undefined) {
+    pasteResult.data.findSnippet.language === 'text'
+      ? S.White()
+      : require(`codemirror/mode/${pasteResult.data.findSnippet.language}/${pasteResult.data.findSnippet.language}`)
+
     return (
       <>
         <Head title={pasteResult.data.findSnippet.title} />
@@ -56,12 +58,14 @@ const View: React.FC = () => {
               lineNumbers: true,
               keymap: 'sublime',
               readOnly: true,
-              noCursor: true,
+              language: pasteResult.data.findSnippet.language,
             }}
           />
         </S.MainContainer>
       </>
     )
+
+    console.log(pasteResult.data.findSnippet.language)
   } else {
     return <Loading />
   }

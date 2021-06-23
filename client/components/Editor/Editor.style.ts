@@ -60,7 +60,7 @@ export const TitleInput = styled('input', {
 })
 
 export const White = css({
-  '.cm-variable': {
+  span: {
     color: '$white !important',
   },
 })
