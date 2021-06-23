@@ -2,3 +2,4 @@ node_modules
 mongoclient.json
 .env
 client/.next
+server/dist
