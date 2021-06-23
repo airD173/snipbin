@@ -118,33 +118,6 @@ Peep the folder structure of this project 👇
 |   |-- yarn-error.log
 |   `-- yarn.lock
 `-- server
-    |-- dist
-    |   |-- context.js
-    |   |-- database.js
-    |   |-- gql
-    |   |   |-- index.js
-    |   |   `-- snippet.js
-    |   |-- nexus-typegen.js
-    |   |-- schema.js
-    |   |-- server.js
-    |   |-- src
-    |   |   |-- constants.js
-    |   |   |-- context.js
-    |   |   |-- database.js
-    |   |   |-- gql
-    |   |   |   |-- index.js
-    |   |   |   `-- snippet.js
-    |   |   |-- index.js
-    |   |   |-- opentelemetry.js
-    |   |   |-- plugins
-    |   |   |   |-- prisma.js
-    |   |   |   |-- sentry.js
-    |   |   |   |-- shutdown.js
-    |   |   |   `-- status.js
-    |   |   |-- schema.js
-    |   |   `-- server.js
-    |   `-- typings
-    |       `-- graphql.js
     |-- examples
     |   `-- snippet.graphql
     |-- nexus-typegen.ts
