@@ -44,16 +44,21 @@ const Editor: React.FC = () => {
   const [createPasteResult, createPaste] = useMutation(Paste)
 
   const CreatePaste = () => {
-    const variables = {
-      id: nanoid(5),
-      title: TitleRef.current?.value,
-      code: codeValue,
-      language: LanguageRef.current?.value,
+    if (codeValue === undefined || codeValue === '') {
+      return document.querySelector('.CodeMirror')?.classList.add('invalid')
     }
 
-    createPaste(variables)
-      .then((result: any) => router.push(result.data.createSnippet.id))
-      .catch((err) => console.log(err))
+    // const variables = {
+    //   id: nanoid(5),
+    //   title:
+    //     TitleRef.current?.value === '' ? 'untitled' : TitleRef.current?.value,
+    //   code: codeValue,
+    //   language: LanguageRef.current?.value,
+    // }
+
+    // createPaste(variables)
+    //   .then((result: any) => router.push(result.data.createSnippet.id))
+    //   .catch((err) => console.log(err))
   }
 
   return (

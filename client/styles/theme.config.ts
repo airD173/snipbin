@@ -22,6 +22,13 @@ export const { css, styled, global, getCssString, keyframes } = createCss({
       mono: 'Roboto Mono, monospace',
     },
   },
+  media: {
+    iPadPro: '(max-width: 1024px)',
+    iPad: '(max-width: 768px)',
+    iPhonePlus: '(max-width: 414px)',
+    iPhone: '(max-width: 375px)',
+    iPhoneSE: '(max-width: 320px)',
+  },
 })
 
 export const ContentWrapper = styled('div', {

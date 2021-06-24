@@ -40,6 +40,12 @@ const globalStyle = global({
     '&:hover, &:focus': {
       border: '2px solid $white',
     },
+    '@iPadPro': {
+      width: '70vw',
+    },
+  },
+  '.invalid': {
+    border: '2px solid #FF6161',
   },
 })
 

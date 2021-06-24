@@ -9,6 +9,9 @@ const ButtonWrapper = styled('div', {
 
 const ButtonBox = styled('div', {
   width: '50vw',
+  '@iPadPro': {
+    width: '70vw',
+  },
 })
 
 const ButtonContainer = styled('div', {

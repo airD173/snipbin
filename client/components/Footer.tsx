@@ -14,6 +14,9 @@ export const FooterBox = styled('div', {
   display: 'flex',
   alignItems: 'center',
   height: 50,
+  '@iPadPro': {
+    width: '70vw',
+  },
 })
 
 export const FooterText = styled('p', {

@@ -20,6 +20,12 @@ export const TitleItems = styled('div', {
   justifyContent: 'space-between',
   width: '50vw',
   alignItems: 'center',
+  '@iPadPro': {
+    width: '70vw',
+  },
+  '@iPhonePlus': {
+    flexDirection: 'column',
+  },
 })
 
 export const Title = styled('a', {
@@ -28,6 +34,9 @@ export const Title = styled('a', {
   fontFamily: '$main',
   textDecoration: 'none',
   fontWeight: 'bolder',
+  '@iPhonePlus': {
+    marginBottom: 20,
+  },
 })
 
 export const Lang = styled('select', {
@@ -56,6 +65,9 @@ export const TitleInput = styled('input', {
   transition: '0.1s linear',
   '&:hover, &:focus': {
     border: '$white 2px solid',
+  },
+  '@iPadPro': {
+    width: '70vw',
   },
 })
 
