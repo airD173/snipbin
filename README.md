@@ -1,6 +1,6 @@
 # SnipBin
 
-A blazing fast, lightweight, elegant and open-source code pasting tool zap
+A blazing fast, lightweight, elegant and open-source code pasting tool 
 
 # 🚀 Quickstart 
 
@@ -162,6 +162,8 @@ Peep the folder structure of this project 👇
  - [Node.js](https://nodejs.org/)
  - [Next.js](https://nextjs.org/)
  - [URQL](https://formidable.com/open-source/urql/)
+ - [Prettier](https://prettier.io/)
+ - [ESLint](https://eslint.org/)
  - [CodeMirror](https://codemirror.net/)
 
 # 🤞 Contributing
