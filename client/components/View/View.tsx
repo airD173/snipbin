@@ -64,8 +64,6 @@ const View: React.FC = () => {
         </S.MainContainer>
       </>
     )
-
-    console.log(pasteResult.data.findSnippet.language)
   } else {
     return <Loading />
   }

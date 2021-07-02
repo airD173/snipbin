@@ -48,17 +48,17 @@ const Editor: React.FC = () => {
       return document.querySelector('.CodeMirror')?.classList.add('invalid')
     }
 
-    // const variables = {
-    //   id: nanoid(5),
-    //   title:
-    //     TitleRef.current?.value === '' ? 'untitled' : TitleRef.current?.value,
-    //   code: codeValue,
-    //   language: LanguageRef.current?.value,
-    // }
+    const variables = {
+      id: nanoid(5),
+      title:
+        TitleRef.current?.value === '' ? 'untitled' : TitleRef.current?.value,
+      code: codeValue,
+      language: LanguageRef.current?.value,
+    }
 
-    // createPaste(variables)
-    //   .then((result: any) => router.push(result.data.createSnippet.id))
-    //   .catch((err) => console.log(err))
+    createPaste(variables)
+      .then((result: any) => router.push(result.data.createSnippet.id))
+      .catch((err) => console.log(err))
   }
 
   return (

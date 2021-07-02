@@ -28,6 +28,14 @@ export const FooterText = styled('p', {
 
 export const FooterLink = styled('a', {
   color: '$main2',
+  variants: {
+    text: {
+      true: {
+        textDecoration: "none",
+        marginLeft: 0,
+      }
+    }
+  },
   marginLeft: 20,
   '&:hover': {
     color: '$white',
@@ -38,7 +46,7 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <FooterBox>
-        <FooterText>Copyright 2021, Harsh Singh</FooterText>
+        <FooterText>Copyright 2021, <FooterLink href="https://harshhhdev.github.io/" text target="_blank">Harsh Singh</FooterLink></FooterText>
         <FooterLink href="https://github.com/harshhhdev" target="_blank">
           <Icons.GitHub />
         </FooterLink>
