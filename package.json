@@ -47,7 +47,7 @@
     "push": "prisma db push --preview-feature",
     "nexus": "nodemost server/dist/src/schema.js",
     "clean": "rm -r server/dist",
-    "start": "tsc && yarn gen && node server/dist/src/index.js && rm -v -rf server/src",
+    "start": "yarn start:client && tsc && yarn gen && node server/dist/src/index.js && rm -v -rf server/src",
     "start:client": "cd client && yarn serve",
     "debug": "nodemon --inspect server/dist/src/index.js",
     "heroku-prebuild": "cd client && yarn -D",
