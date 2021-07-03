@@ -51,7 +51,7 @@
     "start": "node server/dist/src/index.js",
     "start:client": "cd client && yarn start",
     "debug": "nodemon --inspect server/dist/src/index.js",
-    "heroku-prebuild": "cd client && yarn -D",
+    "heroku-prebuild": "cd client && yarn",
     "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "prisma": {
