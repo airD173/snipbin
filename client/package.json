@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "next:start": "next start",
-    "start": "next start -p $PORT",
+    "start": "next start",
+    "serve": "next start -p $PORT",
     "heroku-postbuild": "yarn build"
   },
   "dependencies": {

@@ -48,16 +48,18 @@
     "push": "prisma db push --preview-feature",
     "nexus": "nodemost server/dist/src/schema.js",
     "clean": "rm -r server/dist",
-    "start": "tsc && node server/dist/src/index.js & rm -v -rf src",
+    "start": "tsc && node server/dist/src/index.js && rm -v -rf server/src",
     "start:client": "cd client && yarn start",
     "debug": "nodemon --inspect server/dist/src/index.js",
     "heroku-prebuild": "cd client && yarn -D",
-    "heroku-postbuild": "cd client && yarn && yarn build"
+    "heroku-postbuild": "cd client && yarn && yarn build",
+    "compile": "tsc"
   },
   "prisma": {
     "schema": "server/prisma/schema.prisma"
   },
   "engines": {
-    "node": "16.4.1"
+    "node": "16.4.1",
+    "yarn": "1.22.10"
   }
 }
