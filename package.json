@@ -56,5 +56,8 @@
   },
   "prisma": {
     "schema": "server/prisma/schema.prisma"
+  },
+  "engines": {
+    "node": "16.4.1"
   }
 }
