@@ -40,16 +40,21 @@
     "rxjs": "^7.1.0"
   },
   "scripts": {
-    "dev": "nodemon dist/src/index.js",
+    "dev": "nodemon server/dist/src/index.js",
     "watch": "tsc -w",
     "gen": "prisma generate",
     "migrate": "prisma migrate dev --name init",
     "migrate:deploy": "prisma migrate deploy",
     "push": "prisma db push --preview-feature",
-    "nexus": "nodemost dist/src/schema.js",
-    "clean": "rm -r dist"
+    "nexus": "nodemost server/dist/src/schema.js",
+    "clean": "rm -r server/dist",
+    "start": "node server/dist/src/index.js",
+    "start:client": "cd client && yarn start",
+    "debug": "nodemon --inspect server/dist/src/index.js",
+    "heroku-prebuild": "cd client && yarn -D",
+    "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "prisma": {
-    "schema": "prisma/schema.prisma"
+    "schema": "server/prisma/schema.prisma"
   }
 }
