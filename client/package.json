@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "next:start": "next start",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "yarn build"
   },
   "dependencies": {
     "@stitches/react": "^0.2.0-canary.5",
