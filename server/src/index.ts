@@ -3,4 +3,9 @@ dotenv.config()
 
 import { StartServer } from './server.js'
 
-StartServer()
+import next from 'next'
+const app = next({ dev: true })
+
+app.prepare().then(() => {
+    StartServer()
+})

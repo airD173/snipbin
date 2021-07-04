@@ -17,7 +17,7 @@ import telementry from '@autotelic/fastify-opentelemetry'
 import consts from './constants.js'
 
 import mercurius from 'mercurius'
-import context, { Context } from './context.js'
+import { Context } from './context.js'
 import schema from './schema.js'
 
 export const CreateServer = (options: Options = {}): Instance => {
@@ -69,7 +69,7 @@ export async function StartServer() {
   })
 
   try {
-    const port = process.env.PORT ?? 3001
+    const port = process.env.PORT ?? 3000
     await server.listen(port, '0.0.0.0', () => {
       console.log(`🎵 Listening on http://localhost:${port}`)
       console.log(`💻 Started GraphQL on http://localhost:${port}/graphql`)
