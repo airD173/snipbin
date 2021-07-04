@@ -7,8 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "serve": "next start -p $PORT",
-    "heroku-postbuild": "yarn build"
+    "serve": "next start -p $PORT"
   },
   "dependencies": {
     "@types/node": "^15.12.2",
