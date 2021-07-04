@@ -31,7 +31,6 @@
     "fastify-cors": "^6.0.1",
     "graphql": "^15.5.0",
     "mercurius": "^7.9.0",
-    "next": "^11.0.1",
     "nexus": "^1.0.0",
     "nexus-prisma": "^0.28.0",
     "prisma": "^2.24.1",
