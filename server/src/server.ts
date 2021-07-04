@@ -69,11 +69,13 @@ export async function StartServer() {
   })
 
   try {
-    const port = process.env.PORT ?? 3000
+    const port = process.env.PORT ?? 3001
     await server.listen(port, '0.0.0.0', () => {
-      console.log(`🎵 Listening on http://localhost:${port}`)
-      console.log(`💻 Started GraphQL on http://localhost:${port}/graphql`)
-      console.log(`🚀 Started Altair on http://localhost:${port}/altair`)
+      if (process.env.NODE_ENV !== "production") {
+        console.log(`🎵 Listening on http://localhost:${port}`)
+        console.log(`💻 Started GraphQL on http://localhost:${port}/graphql`)
+        console.log(`🚀 Started Altair on http://localhost:${port}/altair`)
+      }
     })
   } catch (err) {
     server.log.error(err)

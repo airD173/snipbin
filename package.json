@@ -10,6 +10,9 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "ts-node": "^10.0.0",
+    "@types/node": "^15.12.2",
+    "typescript": "^4.3.2",
     "@autotelic/fastify-opentelemetry": "^0.13.0",
     "@nexus/schema": "^0.20.1",
     "@opentelemetry/api": "^1.0.0",
@@ -22,7 +25,6 @@
     "@opentelemetry/tracing": "^0.21.0",
     "@prisma/client": "^2.24.1",
     "@sentry/node": "^6.7.1",
-    "@types/node": "^15.12.2",
     "altair-fastify-plugin": "^4.0.6",
     "apollo-server-express": "^2.25.1",
     "dotenv": "^10.0.0",
@@ -34,9 +36,7 @@
     "nexus": "^1.0.0",
     "nexus-prisma": "^0.28.0",
     "prisma": "^2.24.1",
-    "rxjs": "^7.1.0",
-    "ts-node": "^10.0.0",
-    "typescript": "^4.3.2"
+    "rxjs": "^7.1.0"
   },
   "scripts": {
     "dev": "nodemon server/dist/src/index.js",
@@ -45,10 +45,13 @@
     "migrate": "prisma migrate dev --name init",
     "migrate:deploy": "prisma migrate deploy",
     "push": "prisma db push --preview-feature",
-    "nexus": "node server/dist/src/schema.js",
+    "nexus": "nodemost server/dist/src/schema.js",
     "clean": "rm -r server/dist",
-    "start": "tsc && yarn gen && yarn migrate:deploy && node server/dist/src/index.js && rm -v -rf server/src",
+    "start": "tsc && yarn gen && node server/dist/src/index.js && rm -v -rf server/src",
+    "start:client": "cd client && yarn start",
     "debug": "nodemon --inspect server/dist/src/index.js",
+    "heroku-prebuild": "cd client && yarn -D",
+    "heroku-postbuild": "cd client && yarn && yarn build",
     "compile": "tsc"
   },
   "prisma": {
