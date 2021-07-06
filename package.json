@@ -7,8 +7,12 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "eslint": "^7.30.0",
     "nodemon": "^2.0.7",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "@typescript-eslint/eslint-plugin": "^4.28.3-alpha.0",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint-plugin-react": "^7.24.0"
   },
   "dependencies": {
     "@autotelic/fastify-opentelemetry": "^0.13.0",

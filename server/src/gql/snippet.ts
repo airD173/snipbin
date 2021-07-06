@@ -1,16 +1,4 @@
-import { Prisma, snippets } from '.prisma/client'
-import Nexus, { FieldResolver } from 'nexus'
-import { OutputScalarConfig } from 'nexus/dist/core'
-import { Context } from '../context'
-
-async function FetchUserByID(ctx: Context, id: string) {
-  return ctx.prisma.snippets.findUnique({
-    where: { id: id },
-  })
-}
-
-type ThenArg<T> = T extends PromiseLike<infer U> ? U : T
-type Snip = ThenArg<ReturnType<typeof FetchUserByID>>
+import Nexus from 'nexus'
 
 export const Snippet = Nexus.objectType({
   name: 'snippet',
