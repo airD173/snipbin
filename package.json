@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "main": "dist/src/server.js",
+  "main": "server/dist/src/server.js",
   "type": "module",
   "repository": "https://github.com/harshhhdev/snip-bin",
   "author": "Harsh Singh <hi.harsh@protonmail.ch>",
