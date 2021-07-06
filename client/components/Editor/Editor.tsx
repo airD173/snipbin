@@ -39,7 +39,7 @@ const Editor: React.FC = () => {
 
   const TitleRef = React.useRef<HTMLInputElement>(null)
   const LanguageRef = React.useRef<HTMLSelectElement>(null)
-  const [codeValue, setCodeValue]: any = React.useState()
+  const [codeValue, setCodeValue] = React.useState('')
 
   const [createPasteResult, createPaste] = useMutation(Paste)
 
@@ -57,7 +57,7 @@ const Editor: React.FC = () => {
     }
 
     createPaste(variables)
-      .then((result: any) => router.push(result.data.createSnippet.id))
+      .then((result) => router.push(result.data.createSnippet.id))
       .catch((err) => console.log(err))
   }
 
