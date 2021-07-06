@@ -3,15 +3,6 @@ import Nexus, { FieldResolver } from 'nexus'
 import { OutputScalarConfig } from 'nexus/dist/core'
 import { Context } from '../context'
 
-// const FetchUserByID = (
-//   ctx: Context,
-//   id: string
-// ): Prisma.PromiseReturnType<any> => {
-//   return ctx.prisma.snippets.findUnique({
-//     where: { id: id },
-//   })
-// }
-
 async function FetchUserByID(ctx: Context, id: string) {
   return ctx.prisma.snippets.findUnique({
     where: { id: id },
