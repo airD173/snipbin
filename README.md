@@ -80,6 +80,7 @@ yarn dev
  - [GraphQL](https://graphql.org/)
  - [Fastify](https://www.fastify.io/)
  - [TypeScript](https://www.typescriptlang.org/)
+ - [PostgreSQL](https://www.postgresql.org/)
  - [Prisma](https://www.prisma.io/)
  - [Altair](https://altair.sirmuel.design/)
  - [Mercurius](https://mercurius.dev/)
