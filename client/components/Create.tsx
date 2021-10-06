@@ -60,7 +60,6 @@ const Create: React.FC<{ click: () => void }> = ({ click }) => {
     <ButtonWrapper>
       <ButtonBox>
         <ButtonContainer>
-          <Tooltip>Shift + Enter</Tooltip>
           <Button onClick={click}>Create Paste</Button>
         </ButtonContainer>
       </ButtonBox>
