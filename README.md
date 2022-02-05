@@ -1,102 +1,34 @@
-# SnipBin
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-A blazing fast, lightweight, elegant and open-source code pasting tool 
+## Getting Started
 
-# 🚀 Quickstart 
-
-Running website + development server locally
-
-```
-git clone https://github.com/harshhhdev/snip-bin.git
-```
-
-## Setting up the server
+First, run the development server:
 
 ```bash
-cd server
-
-# Install deps
-yarn
-```
-
-Now, rename `.env.Example` to `.env`
-
-Input in your postgres connection string.
-
-```env
-DATABASE_URL = 'postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public'
-```
-
-## Setting up Prisma
-
-Creating a Prisma schema
-
-```bash
-# prisma generate
-yarn prisma gen
-```
-
-Migrations 
-
-```bash
-# prisma migrate dev --name init
-yarn prisma migrate
-```
-
-## Starting server
-
-```bash
-# snip-bin/server
-# watch the TypeScript files, and build to /dist
-yarn watch
-
-# Use Nodemon and run the JavaScript files in /dist
-yarn dev
-
-# NOTE: Post GraphQL requests to /graphql, not /altair
-https://localhost:3001
-https://localhost:3001/graphql
-https://localhost:3001/altair
-```
-
-## Setting up client
-
-```bash
-cd client
-
-# Install deps
-yarn
-```
-
-Start the [development server](http://localhost:3000/)
-
-```bash
-# next dev
+npm run dev
+# or
 yarn dev
 ```
 
-# 🔧 Tools Used
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
- - [GraphQL](https://graphql.org/)
- - [Fastify](https://www.fastify.io/)
- - [TypeScript](https://www.typescriptlang.org/)
- - [PostgreSQL](https://www.postgresql.org/)
- - [Prisma](https://www.prisma.io/)
- - [Altair](https://altair.sirmuel.design/)
- - [Mercurius](https://mercurius.dev/)
- - [Node.js](https://nodejs.org/)
- - [Next.js](https://nextjs.org/)
- - [URQL](https://formidable.com/open-source/urql/)
- - [Prettier](https://prettier.io/)
- - [ESLint](https://eslint.org/)
- - [CodeMirror](https://codemirror.net/)
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-# 🤞 Contributing
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-After setting up the project, and making changes:
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-```git
-git add .
-git commit -m "commit message"
-git push YOUR_REPO_URL YOUR_BRANCH
-```
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
