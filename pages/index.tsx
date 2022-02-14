@@ -1,11 +1,11 @@
 import type { GetServerSideProps, NextPage } from 'next'
-
-import prisma from '@lib/prisma'
-import Editor from '@components/Editor/Editor'
+import { getSession } from 'next-auth/react'
 
 import { Snip as SnipType } from '.prisma/client'
+import prisma from '@lib/prisma'
 
-import { getSession } from 'next-auth/react'
+import Editor from '@components/Editor/Editor'
+import Shortcuts from '@components/Shortcuts'
 
 const Home: NextPage<{ userPastes: SnipType[] | undefined }> = ({
   userPastes,
@@ -13,6 +13,7 @@ const Home: NextPage<{ userPastes: SnipType[] | undefined }> = ({
   return (
     <>
       <Editor snips={userPastes} />
+      <Shortcuts edit={true} />
     </>
   )
 }

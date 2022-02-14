@@ -18,19 +18,15 @@ const View: React.FC<{
   snip: SnipType
   snips: SnipType[] | undefined
   user: User | undefined
-}> = ({ snip, snips, user }) => {
+  extension: string | undefined
+}> = ({ snip, snips, user, extension }) => {
   React.useEffect(() => hljs.highlightAll(), [])
 
   const passwordInput = React.useRef<HTMLInputElement>(null)
   const [decrypted, setDecrypted] = React.useState(true)
 
   const ComparePassword = () => {
-    console.log(snip.password!)
-    console.log(passwordInput.current!.value)
-
-    return compare(passwordInput.current!.value, snip.password!, (err, res) => {
-      console.log(res)
-
+    return compare(passwordInput.current!.value, snip.password!, (err, res) =>
       res
         ? setDecrypted(true)
         : toast.error('Invalid Password', {
@@ -42,7 +38,7 @@ const View: React.FC<{
             draggable: true,
             progress: undefined,
           })
-    })
+    )
   }
 
   return (
@@ -58,7 +54,13 @@ const View: React.FC<{
             ))}
           </S.Numbers>
           <S.Editor>
-            <S.CodePre>
+            <S.CodePre
+              className={
+                extension
+                  ? `language-${extension}`
+                  : `language-${snip.language}`
+              }
+            >
               <S.Code>{snip.content}</S.Code>
             </S.CodePre>
           </S.Editor>

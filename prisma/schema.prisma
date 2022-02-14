@@ -23,7 +23,8 @@ model Snip {
     slug      String   @unique @db.VarChar(20)
     createdAt DateTime @default(now())
     content   String   @db.LongText
-    password  String?
+    password  String?  @db.VarChar(20)
+    language  String   @db.VarChar(20)
     author    User?    @relation(fields: [authorId], references: [id])
     authorId  Int?
 }

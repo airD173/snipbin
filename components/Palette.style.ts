@@ -38,6 +38,9 @@ export const Palette = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   overflow: 'hidden',
+  '@iPhonePlus': {
+    width: 300,
+  },
 })
 
 export const SearchContainer = styled('div', {
@@ -56,7 +59,7 @@ export const Options = styled('div', {
   width: 600,
   overflow: 'hidden scroll',
   '&::-webkit-scrollbar': {
-    width: 5,
+    width: 10,
   },
   '&::-webkit-scrollbar-thumb': {
     background: '#3B404B',
@@ -112,5 +115,32 @@ export const Option = styled('a', {
   },
   svg: {
     marginRight: 10,
+  },
+  variants: {
+    header: {
+      true: {
+        '&:hover': {
+          color: '$white1',
+          background: '$bg',
+          cursor: 'help',
+        },
+      },
+    },
+  },
+})
+
+export const MobileToggle = styled('div', {
+  background: '#393E45',
+  width: 'fit-content',
+  height: 'fit-content',
+  display: 'none',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: 15,
+  color: '$white10',
+  borderRadius: '100%',
+  margin: '10px 0 0 10px',
+  '@media (pointer:none), (pointer:coarse)': {
+    display: 'flex',
   },
 })

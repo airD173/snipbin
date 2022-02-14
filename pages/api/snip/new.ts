@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { authorization } = req.headers
-  const { content, slug, password } = req.body
+  const { content, slug, password, language } = req.body
 
   if (authorization) {
     const user = await prisma.user.findUnique({
@@ -19,6 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
           slug: slug,
           author: { connect: { id: user?.id } },
           password: password,
+          language: language,
         },
       })
 
@@ -30,6 +31,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         content: content,
         slug: slug,
         password: password,
+        language: language,
       },
     })
 
@@ -41,6 +43,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       content: content,
       slug: slug,
       password: password,
+      language: language,
     },
   })
 

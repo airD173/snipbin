@@ -4,10 +4,9 @@ import * as S from '../Palette.style'
 
 import { nanoid } from 'nanoid'
 import { hash } from 'bcryptjs'
-import axios from 'axios'
+import axios, { AxiosRequestConfig } from 'axios'
 
 import useArrowKeys from 'react-arrow-key-navigation-hook'
-import { useDetectClickOutside } from 'react-detect-click-outside'
 
 import { useRouter } from 'next/router'
 import { signIn, signOut, useSession } from 'next-auth/react'
@@ -28,9 +27,12 @@ import {
   FaUser,
   FaLink,
   FaAngleLeft,
+  FaTerminal,
+  FaScroll,
 } from 'react-icons/fa'
 
 import { Snip as SnipType } from '.prisma/client'
+import DetectLang from '@lib/DetectLang'
 
 const Palette: React.FC<{
   content: string
@@ -58,13 +60,36 @@ const Palette: React.FC<{
   }
 
   const parentRef = useArrowKeys({ selectors: 'a,input' })
-  const boundary = useDetectClickOutside({ onTriggered: Toggle })
 
   React.useEffect(() => {
     if (open && subMenu === 'main') inputRef.current!.focus()
     else if (open && subMenu === 'encrypt') encryptRef.current!.focus()
     else if (open && subMenu === 'slug') slugRef.current!.focus()
   }, [subMenu, open])
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey && e.key === 'p') || e.key === 'Escape') {
+        e.preventDefault()
+        Toggle()
+      }
+
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault()
+        console.log(content)
+        // CreateSnip(slug === '' || null ? nanoid(5) : slug)
+      }
+
+      if (e.ctrlKey && e.key === 'm') {
+        e.preventDefault()
+        router.push('/')
+      }
+    })
+
+    document.addEventListener('click', (e) => {
+      if (e.target instanceof Element && e.target.id === 'dialogue') Toggle()
+    })
+  }, [])
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
@@ -77,27 +102,30 @@ const Palette: React.FC<{
   }
 
   const CreateSnip = async (slug: string) => {
-    // password !== ''
-    //   ? await hash(password, 10, async (err, hash) => {
-    //       await axios.post('/api/new', {
-    //         content: content,
-    //         slug: slug,
-    //         id: 1,
-    //         password: hash,
-    //       })
-    //     })
-    //   : await axios.post('/api/new', {
-    //       content: content,
-    //       slug: slug,
-    //       id: 1,
-    //     })
-    // router.push(`/${slug}`)
+    const language = await DetectLang(content)
+
+    password !== ''
+      ? await hash(password, 10, async (err, hash) => {
+          await axios.post('/api/new', {
+            content: content,
+            slug: slug,
+            password: hash,
+            language: language.data.data,
+          })
+        })
+      : await axios.post('/api/new', {
+          content: content,
+          slug: slug,
+          language: language,
+        })
+
+    router.push(`/${slug}`)
   }
 
   const Main: S.Option[] = [
     {
       icon: FaNewspaper,
-      text: 'Create Snip',
+      text: 'Save Snip',
       href: false,
       onClick: () => CreateSnip(slug === '' || null ? nanoid(5) : slug),
     },
@@ -129,7 +157,7 @@ const Palette: React.FC<{
       icon: FaCode,
       text: 'API',
       href: true,
-      url: '/api',
+      url: '/api-docs.md',
     },
     {
       icon: FaCodeBranch,
@@ -138,10 +166,16 @@ const Palette: React.FC<{
       url: 'https://github.com/harshhhdev/snipbin',
     },
     {
+      icon: FaScroll,
+      text: 'Guide',
+      href: true,
+      url: '/guide.md',
+    },
+    {
       icon: FaInfoCircle,
       text: 'About',
       href: true,
-      url: '/abt',
+      url: '/abt.md',
     },
   ]
   const filteredResults = S.filter(Main, query)
@@ -156,9 +190,14 @@ const Palette: React.FC<{
 
   return (
     <>
+      {!open && (
+        <S.MobileToggle onClick={Toggle}>
+          <FaTerminal size={25} />
+        </S.MobileToggle>
+      )}
       {open && (
-        <S.Container role='dialog' aria-modal='true'>
-          <S.Palette ref={boundary}>
+        <S.Container role='dialog' aria-modal='true' id='dialogue'>
+          <S.Palette>
             {subMenu === 'main' && (
               <S.Options ref={parentRef}>
                 <S.SearchContainer>

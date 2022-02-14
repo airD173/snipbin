@@ -32,6 +32,12 @@ const globalStyle = globalCss({
   '::placeholder': {
     color: '$white1',
   },
+  '::-webkit-scrollbar': {
+    width: 10,
+  },
+  '::-webkit-scrollbar-thumb': {
+    background: '#4D545E',
+  },
   code: {
     padding: '0 !important',
   },

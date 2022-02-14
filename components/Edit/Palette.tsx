@@ -4,11 +4,10 @@ import * as S from '../Palette.style'
 
 import { Snip as SnipType } from '.prisma/client'
 
-import { useDetectClickOutside } from 'react-detect-click-outside'
 import useArrowKeys from 'react-arrow-key-navigation-hook'
 import axios from 'axios'
 
-import { useRouter } from 'next/router'
+import { NextRouter, useRouter } from 'next/router'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
 import {
@@ -29,7 +28,12 @@ import {
   FaTrash,
   FaAngleLeft,
   FaLink,
+  FaScroll,
+  FaBan,
 } from 'react-icons/fa'
+
+export const DeleteSnip = (slug: string, router: NextRouter) =>
+  axios.post('/api/delete', { slug: slug }).then(() => router.push(`/`))
 
 const Palette: React.FC<{
   snip: SnipType
@@ -58,7 +62,29 @@ const Palette: React.FC<{
   }
 
   const parentRef = useArrowKeys({ selectors: 'a,input' })
-  const boundary = useDetectClickOutside({ onTriggered: Toggle })
+
+  React.useEffect(() => {
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey && e.key === 'p') || e.key === 'Escape') {
+        e.preventDefault()
+        Toggle()
+      }
+
+      if (e.ctrlKey && e.key === 's') {
+        e.preventDefault()
+        EditSnip()
+      }
+
+      if (e.ctrlKey && e.key === 'm') {
+        e.preventDefault()
+        router.push('/')
+      }
+    })
+
+    document.addEventListener('click', (e) => {
+      if (e.target instanceof Element && e.target.id === 'dialogue') Toggle()
+    })
+  }, [])
 
   React.useEffect(() => {
     if (open && subMenu === 'main') inputRef.current!.focus()
@@ -76,15 +102,15 @@ const Palette: React.FC<{
     setQuery('')
   }
 
-  const EditSnip = () => {
+  const EditSnip = () =>
     axios
       .post('/api/edit', {
         content: content,
-        slug: slug,
+        originalSlug: snip.slug,
+        newSlug: slug,
         password: password,
       })
       .then(() => router.push(`/${slug}`))
-  }
 
   const Main: S.Option[] = [
     {
@@ -103,7 +129,7 @@ const Palette: React.FC<{
       icon: FaTrash,
       text: 'Delete Snip',
       href: false,
-      onClick: () => console.log('deleted'),
+      onClick: () => setSubMenu('delete'),
     },
     {
       icon: FaLock,
@@ -133,7 +159,7 @@ const Palette: React.FC<{
       icon: FaCode,
       text: 'API',
       href: true,
-      url: '/api',
+      url: '/api-docs.md',
     },
     {
       icon: FaCodeBranch,
@@ -142,10 +168,16 @@ const Palette: React.FC<{
       url: 'https://github.com/harshhhdev/snipbin',
     },
     {
+      icon: FaScroll,
+      text: 'Guide',
+      href: true,
+      url: '/guide.md',
+    },
+    {
       icon: FaInfoCircle,
       text: 'About',
       href: true,
-      url: '/abt',
+      url: '/abt.md',
     },
   ]
   const filteredResults = S.filter(Main, query)
@@ -161,7 +193,7 @@ const Palette: React.FC<{
   return (
     <>
       {open && (
-        <S.Container role='dialog' aria-modal='true'>
+        <S.Container role='dialog' aria-modal='true' id='dialogue'>
           <S.Palette ref={parentRef}>
             {subMenu === 'main' && (
               <S.Options>
@@ -252,6 +284,23 @@ const Palette: React.FC<{
                     <FaLink /> {snip.text}
                   </S.Option>
                 ))}
+              </S.Options>
+            )}
+            {subMenu === 'delete' && (
+              <S.Options ref={parentRef}>
+                <S.Option header>
+                  Would you like to delete this paste? This action is
+                  irreversible
+                </S.Option>
+                <S.Option onClick={() => setSubMenu('main')} href='#'>
+                  <FaBan /> Cancel
+                </S.Option>
+                <S.Option
+                  onClick={() => DeleteSnip(snip.slug, router)}
+                  href='#'
+                >
+                  <FaCheck /> Confirm
+                </S.Option>
               </S.Options>
             )}
           </S.Palette>

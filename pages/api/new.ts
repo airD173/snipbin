@@ -5,16 +5,17 @@ import { getSession } from 'next-auth/react'
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const session = await getSession({ req })
 
-  const { content, slug, id, password } = req.body
+  const { content, slug, password, language } = req.body
 
   if (session) {
-    prisma.snip
+    return prisma.snip
       .create({
         data: {
           content: content,
           slug: slug,
-          author: { connect: { id: 1 } },
+          author: { connect: { id: parseInt(session.user?.name!) } },
           password: password,
+          language: language,
         },
       })
       .then(() => res.status(200).end())
@@ -26,6 +27,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       content: content,
       slug: slug,
       password: password,
+      language: language,
     },
   })
 

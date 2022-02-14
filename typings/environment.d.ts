@@ -7,5 +7,7 @@ namespace NodeJS {
     DATABASE_URL: string
     SECRET: string
     API_KEYS_JWT_SECRET_KEY: string
+    UPSTASH_REST_API_DOMAIN: string
+    UPSTASH_REST_API_TOKEN: string
   }
 }

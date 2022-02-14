@@ -57,7 +57,17 @@ export default NextAuth({
       return true
     },
     // async redirect({ url, baseUrl }) { return baseUrl },
-    // async session({ session, token, user }) { return session },
+    async session({ session, token, user }) {
+      const currentUser = await prisma.user.findUnique({
+        where: {
+          email: session.user?.email!,
+        },
+      })
+
+      session.user!.name = currentUser!.id.toString()
+
+      return session
+    },
     async jwt({ token, user, account, profile, isNewUser }) {
       const currentUser = await prisma.user.findUnique({
         where: {

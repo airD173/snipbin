@@ -9,11 +9,10 @@ export const Editor = styled('textarea', {
   backgroundColor: 'transparent',
   resize: 'none',
   width: '100%',
-  marginLeft: 20,
-  color: '$white10',
+  color: '$white5',
   minHeight: 'calc(100vh - 30px)',
   border: 'none',
   outline: 'none',
   fontSize: '$1',
-  padding: 20,
+  paddingTop: 20,
 })
