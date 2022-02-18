@@ -4,9 +4,15 @@ import * as S from '../Palette.style'
 
 import { nanoid } from 'nanoid'
 import { hash } from 'bcryptjs'
-import axios, { AxiosRequestConfig } from 'axios'
+import axios from 'axios'
+
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css'
 
 import useArrowKeys from 'react-arrow-key-navigation-hook'
+import useClickOutside from '@hooks/useClickOutside'
+import useShortcut from '@hooks/useShortcut'
+import DetectLang from '@lib/DetectLang'
 
 import { useRouter } from 'next/router'
 import { signIn, signOut, useSession } from 'next-auth/react'
@@ -32,7 +38,6 @@ import {
 } from 'react-icons/fa'
 
 import { Snip as SnipType } from '.prisma/client'
-import DetectLang from '@lib/DetectLang'
 
 const Palette: React.FC<{
   content: string
@@ -60,36 +65,14 @@ const Palette: React.FC<{
   }
 
   const parentRef = useArrowKeys({ selectors: 'a,input' })
+  useClickOutside('dialogue', Toggle)
 
   React.useEffect(() => {
     if (open && subMenu === 'main') inputRef.current!.focus()
     else if (open && subMenu === 'encrypt') encryptRef.current!.focus()
     else if (open && subMenu === 'slug') slugRef.current!.focus()
+    else if (open && subMenu === 'snips') inputRef.current!.focus()
   }, [subMenu, open])
-
-  React.useEffect(() => {
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey && e.key === 'p') || e.key === 'Escape') {
-        e.preventDefault()
-        Toggle()
-      }
-
-      if (e.ctrlKey && e.key === 's') {
-        e.preventDefault()
-        console.log(content)
-        // CreateSnip(slug === '' || null ? nanoid(5) : slug)
-      }
-
-      if (e.ctrlKey && e.key === 'm') {
-        e.preventDefault()
-        router.push('/')
-      }
-    })
-
-    document.addEventListener('click', (e) => {
-      if (e.target instanceof Element && e.target.id === 'dialogue') Toggle()
-    })
-  }, [])
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
@@ -106,12 +89,24 @@ const Palette: React.FC<{
 
     password !== ''
       ? await hash(password, 10, async (err, hash) => {
-          await axios.post('/api/new', {
-            content: content,
-            slug: slug,
-            password: hash,
-            language: language.data.data,
-          })
+          try {
+            await axios.post('/api/new', {
+              content: content,
+              slug: slug,
+              password: hash,
+              language: language.data.data,
+            })
+          } catch (err) {
+            toast.error('Error Creating Snip!', {
+              position: 'bottom-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            })
+          }
         })
       : await axios.post('/api/new', {
           content: content,
@@ -121,6 +116,13 @@ const Palette: React.FC<{
 
     router.push(`/${slug}`)
   }
+
+  useShortcut('p', true, Toggle)
+  useShortcut('Escape', false, Toggle)
+  useShortcut('s', true, () =>
+    CreateSnip(slug === '' || null ? nanoid(5) : slug)
+  )
+  useShortcut('m', true, () => router.push('/'))
 
   const Main: S.Option[] = [
     {
@@ -231,6 +233,7 @@ const Palette: React.FC<{
                   spellCheck='false'
                   ref={encryptRef}
                   defaultValue={password}
+                  maxLength={20}
                 />
                 <S.Option
                   onClick={() => {
@@ -253,6 +256,7 @@ const Palette: React.FC<{
                   spellCheck='false'
                   ref={slugRef}
                   defaultValue={slug}
+                  maxLength={20}
                 />
                 <S.Option
                   onClick={() => {
@@ -292,6 +296,18 @@ const Palette: React.FC<{
           </S.Palette>
         </S.Container>
       )}
+      <ToastContainer
+        position='bottom-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='colored'
+      />
     </>
   )
 }

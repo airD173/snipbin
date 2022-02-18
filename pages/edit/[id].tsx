@@ -42,7 +42,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     })
 
-    const userPastes = await prisma.snip.findMany({
+    const snips = await prisma.snip.findMany({
       where: {
         author: user,
       },
@@ -58,7 +58,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       return {
         props: {
           snip,
-          userPastes,
+          snips,
         },
       }
     }

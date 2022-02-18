@@ -5,6 +5,9 @@ import * as S from '../Palette.style'
 import { Snip as SnipType } from '.prisma/client'
 
 import useArrowKeys from 'react-arrow-key-navigation-hook'
+import useClickOutside from '@hooks/useClickOutside'
+import useShortcut from '@hooks/useShortcut'
+
 import axios from 'axios'
 
 import { NextRouter, useRouter } from 'next/router'
@@ -62,34 +65,13 @@ const Palette: React.FC<{
   }
 
   const parentRef = useArrowKeys({ selectors: 'a,input' })
-
-  React.useEffect(() => {
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey && e.key === 'p') || e.key === 'Escape') {
-        e.preventDefault()
-        Toggle()
-      }
-
-      if (e.ctrlKey && e.key === 's') {
-        e.preventDefault()
-        EditSnip()
-      }
-
-      if (e.ctrlKey && e.key === 'm') {
-        e.preventDefault()
-        router.push('/')
-      }
-    })
-
-    document.addEventListener('click', (e) => {
-      if (e.target instanceof Element && e.target.id === 'dialogue') Toggle()
-    })
-  }, [])
+  useClickOutside('dialogue', Toggle)
 
   React.useEffect(() => {
     if (open && subMenu === 'main') inputRef.current!.focus()
     else if (open && subMenu === 'encrypt') encryptRef.current!.focus()
     else if (open && subMenu === 'slug') slugRef.current!.focus()
+    else if (open && subMenu === 'snips') inputRef.current!.focus()
   }, [subMenu, open])
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
@@ -111,6 +93,12 @@ const Palette: React.FC<{
         password: password,
       })
       .then(() => router.push(`/${slug}`))
+
+  useClickOutside('dialogue', Toggle)
+  useShortcut('p', true, Toggle)
+  useShortcut('Escape', false, Toggle)
+  useShortcut('s', true, EditSnip)
+  useShortcut('m', true, () => router.push('/'))
 
   const Main: S.Option[] = [
     {
@@ -289,7 +277,7 @@ const Palette: React.FC<{
             {subMenu === 'delete' && (
               <S.Options ref={parentRef}>
                 <S.Option header>
-                  Would you like to delete this paste? This action is
+                  Would you like to delete this snip? This action is
                   irreversible
                 </S.Option>
                 <S.Option onClick={() => setSubMenu('main')} href='#'>

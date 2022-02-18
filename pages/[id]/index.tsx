@@ -40,7 +40,7 @@ export default Snip
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context)
-  const error = new Error('Paste does not exist')
+  const error = new Error('Snip does not exist')
 
   const slug = context.params?.id?.toString().split('.')
   const extension = slug![1]

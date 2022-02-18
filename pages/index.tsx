@@ -7,12 +7,10 @@ import prisma from '@lib/prisma'
 import Editor from '@components/Editor/Editor'
 import Shortcuts from '@components/Shortcuts'
 
-const Home: NextPage<{ userPastes: SnipType[] | undefined }> = ({
-  userPastes,
-}) => {
+const Home: NextPage<{ snips: SnipType[] | undefined }> = ({ snips }) => {
   return (
     <>
-      <Editor snips={userPastes} />
+      <Editor snips={snips} />
       <Shortcuts edit={true} />
     </>
   )
@@ -28,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     })
 
-    const userPastes = await prisma.snip.findMany({
+    const snips = await prisma.snip.findMany({
       where: {
         author: user,
       },
@@ -36,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     return {
       props: {
-        userPastes,
+        snips,
       },
     }
   }

@@ -10,7 +10,7 @@ const Editor: React.FC<{ snips: SnipType[] | undefined; text?: string }> = ({
   snips,
   text,
 }) => {
-  const [content, setContent] = React.useState('')
+  const [content, setContent] = React.useState(text!)
 
   // autoFocus doesn't work in React, https://stackoverflow.com/questions/49462561/autofocus-doesnt-work-in-react
   const EditorElement = React.useRef<HTMLTextAreaElement>(null)

@@ -14,5 +14,5 @@ export const Editor = styled('textarea', {
   border: 'none',
   outline: 'none',
   fontSize: '$1',
-  paddingTop: 20,
+  paddingTop: 10,
 })

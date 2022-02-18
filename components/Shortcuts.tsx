@@ -59,11 +59,11 @@ const Shortcuts: React.FC<{ edit: boolean }> = ({ edit }) => {
       <NotificationContent href='/guide.md' draggable='false'>
         {edit ? (
           <NotificationText>
-            <Key>ctrl+s</Key> to save, <Key>ctrl+m</Key> for a new paste
+            <Key>ctrl+s</Key> to save, <Key>ctrl+m</Key> for a new snip
           </NotificationText>
         ) : (
           <NotificationText>
-            <Key>ctrl+m</Key> for a new paste, <Key>ctrl+e</Key> to edit
+            <Key>ctrl+m</Key> for a new snip, <Key>ctrl+e</Key> to edit
           </NotificationText>
         )}
         <NotificationText margin>

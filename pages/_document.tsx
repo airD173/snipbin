@@ -6,10 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link
-            href='https://fonts.googleapis.com/css2?family=Fira+Code&display=swap'
-            rel='stylesheet'
-          />
+          <link rel='preload' href='/iosevka.ttf' as='font' crossOrigin='' />
           <style
             id='stitches'
             dangerouslySetInnerHTML={{ __html: getCssText() }}

@@ -13,13 +13,13 @@ const globalStyle = globalCss({
   body: {
     background: '$bg',
     overflowX: 'hidden',
-    fontFamily: '$main',
+    fontFamily: 'iosevka',
   },
   'input, textArea, button, select': {
-    fontFamily: '$main',
+    fontFamily: 'iosevka',
   },
   '.Toastify__toast-body': {
-    fontFamily: '$main !important',
+    fontFamily: 'iosevka !important',
     fontSize: '$1',
   },
   '::selection': {
@@ -40,6 +40,14 @@ const globalStyle = globalCss({
   },
   code: {
     padding: '0 !important',
+    fontFamily: 'iosevka !important',
+  },
+  '@font-face': {
+    fontFamily: 'iosevka',
+    src: 'url(/iosevka.ttf)',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontDisplay: 'swap',
   },
 })
 

@@ -5,9 +5,9 @@ The base endpoint for the API is `https://snip.hxrsh.in/api`
 You DO NOT need any API keys to access the API, unless you need
 to do specific operations which require an account. Examples include:
 
-- Linking a paste with your account
-- Editing a paste
-- Deleting a paste
+- Linking a snip with your account
+- Editing a snip
+- Deleting a snip
 
 To provide a token to the API, simply set the `Authorization` header
 to your unique API key.
@@ -50,11 +50,11 @@ that is all subject to change.
 
 # Endpoints
 
-### Fetching pastes (GET /snip/{id})
+### Fetching snips (GET /snip/{id})
 
-NOTE: This DOES NOT work on encrypted pastes.
+NOTE: This DOES NOT work on encrypted snips.
 
-This returns a full paste object as shown below:
+This returns a full snip object as shown below:
 
 | field     | type        | description                         |
 | --------- | ----------- | ----------------------------------- |
@@ -66,9 +66,9 @@ This returns a full paste object as shown below:
 | author    | User        | The account linked with the snippet |
 | createdAt | DateTime    | When the snippet was created        |
 
-### Creating pastes (POST /snip/new)
+### Creating snips (POST /snip/new)
 
-This does not require an API key. Although, if you would like the paste
+This does not require an API key. Although, if you would like the snip
 to be linked with your account please set an `Authorization` header.
 
 Required JSON body:
@@ -81,14 +81,14 @@ Required JSON body:
 | language | no       | varchar(20) | The language of the snippet (autodetected) |
 | author   | yes      | User        | The account linked with the snippet        |
 
-### Editing pastes (PUT /snip/{id}/edit)
+### Editing snips (PUT /snip/{id}/edit)
 
-nSince you can only edit pastes on your account, the `Authorization` header
+nSince you can only edit snips on your account, the `Authorization` header
 is required here.
 
-To edit a paste, add the values you're editing in the JSON body.
+To edit a snip, add the values you're editing in the JSON body.
 
-This returns a full paste object as show below:
+This returns a full snip object as show below:
 
 | field     | editable | type        | description                                |
 | --------- | -------- | ----------- | ------------------------------------------ |
@@ -100,7 +100,7 @@ This returns a full paste object as show below:
 | author    | no       | User        | The account linked with the snippet        |
 | createdAt | no       | DateTime    | When the snippet was created               |
 
-### Deleting pastes (DELETE /snip/{id}/delete)
+### Deleting snips (DELETE /snip/{id}/delete)
 
 NOTE: This action is irreversible.
 

@@ -17,21 +17,20 @@ export const Editor = styled('div', {
   border: 'none',
   outline: 'none',
   fontSize: '$1',
-  lineHeight: 1.3,
   background: '$bg',
-  paddingTop: 20,
+  paddingTop: 10,
 })
 
 export const Numbers = styled('div', {
-  textAlign: 'end',
   userSelect: 'none',
-  padding: '20px 20px 0 20px',
+  padding: '10px 10px 0 10px',
 })
 
 export const LineNumber = styled('div', {
   color: '$white1',
   fontSize: '$1',
-  lineHeight: 1.3,
+  width: 20,
+  textAlign: 'left',
 })
 
 export const Form = styled('form', {

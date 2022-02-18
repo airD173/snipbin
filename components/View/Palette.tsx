@@ -1,6 +1,10 @@
 import React from 'react'
+
+import useClickOutside from '@hooks/useClickOutside'
+import useShortcut from '@hooks/useShortcut'
 import useArrowKeys from 'react-arrow-key-navigation-hook'
 
+import { DeleteSnip } from '@components/Edit/Palette'
 import * as S from '../Palette.style'
 
 import { copyToClipboard } from 'copy-lite'
@@ -31,7 +35,6 @@ import {
   FaScroll,
 } from 'react-icons/fa'
 import { Snip as SnipType, User } from '.prisma/client'
-import { DeleteSnip } from '@components/Edit/Palette'
 
 const Palette: React.FC<{
   snip: SnipType
@@ -46,7 +49,22 @@ const Palette: React.FC<{
   const inputRef = React.useRef<HTMLInputElement>(null)
   const [query, setQuery] = React.useState('')
 
+  const Toggle = () => {
+    setOpen((open) => !open)
+    setSubMenu('main')
+    setQuery('')
+  }
+
   const parentRef = useArrowKeys({ selectors: 'a,input' })
+  useClickOutside('dialogue', Toggle)
+  useShortcut('p', true, Toggle)
+  useShortcut('Escape', false, Toggle)
+  useShortcut('e', true, () =>
+    user === undefined
+      ? router.push(`/${snip.slug}/clone`)
+      : router.push(`/edit/${snip.slug}`)
+  )
+  useShortcut('m', true, () => router.push('/'))
 
   const { data: session, status } = useSession()
   const router = useRouter()
@@ -55,37 +73,6 @@ const Palette: React.FC<{
     if (open && subMenu === 'main') inputRef.current!.focus()
     else if (open && subMenu === 'snips') inputRef.current!.focus()
   }, [subMenu, open])
-
-  React.useEffect(() => {
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey && e.key === 'p') || e.key === 'Escape') {
-        e.preventDefault()
-        Toggle()
-      }
-
-      if (e.ctrlKey && e.key === 'e') {
-        e.preventDefault()
-        user === undefined
-          ? router.push(`/${snip.slug}/clone`)
-          : router.push(`/edit/${snip.slug}`)
-      }
-
-      if (e.ctrlKey && e.key === 'm') {
-        e.preventDefault()
-        router.push('/')
-      }
-    })
-
-    document.addEventListener('click', (e) => {
-      if (e.target instanceof Element && e.target.id === 'dialogue') Toggle()
-    })
-  }, [])
-
-  const Toggle = () => {
-    setOpen((open) => !open)
-    setSubMenu('main')
-    setQuery('')
-  }
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
@@ -223,7 +210,7 @@ const Palette: React.FC<{
               </S.Options>
             )}
             {subMenu === 'snips' && (
-              <S.Options>
+              <S.Options ref={parentRef}>
                 <S.SearchContainer>
                   <FaSearch />
                   <S.SearchInput
@@ -246,7 +233,7 @@ const Palette: React.FC<{
             {subMenu === 'delete' && (
               <S.Options ref={parentRef}>
                 <S.Option header>
-                  Would you like to delete this paste? This action is
+                  Would you like to delete this snip? This action is
                   irreversible
                 </S.Option>
                 <S.Option onClick={() => setSubMenu('main')} href='#'>
