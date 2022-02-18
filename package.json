@@ -1,7 +1,7 @@
 {
   "name": "snipbin",
   "private": true,
-  "proxy": "http://localhost:3000",
+  "author": "Harsh Singh <hxrsh@singh.in>",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,8 +13,6 @@
   "dependencies": {
     "@prisma/client": "^3.8.1",
     "@stitches/react": "^1.2.6",
-    "@types/bcryptjs": "^2.4.2",
-    "@types/react-click-outside-hook": "^1.0.0",
     "axios": "^0.25.0",
     "babel-plugin-superjson-next": "^0.4.2",
     "bcryptjs": "^2.4.3",
@@ -29,8 +27,6 @@
     "prisma": "^3.8.1",
     "react": "17.0.2",
     "react-arrow-key-navigation-hook": "^1.0.2",
-    "react-click-outside-hook": "^1.1.1",
-    "react-detect-click-outside": "^1.1.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "react-toastify": "^8.1.0",
@@ -39,6 +35,8 @@
   "devDependencies": {
     "@types/node": "17.0.10",
     "@types/react": "17.0.38",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/react-click-outside-hook": "^1.0.0",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8",
     "typescript": "4.5.5"
