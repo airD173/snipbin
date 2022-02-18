@@ -1037,11 +1037,6 @@ hoist-non-react-statics@^3.3.2:
   dependencies:
     react-is "^16.7.0"
 
-hotkeys-js@^3.8.1:
-  version "3.8.7"
-  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.8.7.tgz#c16cab978b53d7242f860ca3932e976b92399981"
-  integrity sha512-ckAx3EkUr5XjDwjEHDorHxRO2Kb7z6Z2Sxul4MbBkN8Nho7XDslQsgMJT+CiJ5Z4TgRxxvKHEpuLE3imzqy4Lg==
-
 ignore@^4.0.6:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
@@ -1654,16 +1649,6 @@ react-arrow-key-navigation-hook@^1.0.2:
   resolved "https://registry.yarnpkg.com/react-arrow-key-navigation-hook/-/react-arrow-key-navigation-hook-1.0.2.tgz#9722e6b494b9c44a988ee2ba5724df1be286cb67"
   integrity sha512-ClU6OTB91/BgQdei8+LRMOhy9x7IA15tlT9I+bdwwE/pdv7l1a0w2M5HoFxzVbI0OZJdn0oDZ6FveNR7GAUxpA==
 
-react-click-outside-hook@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-click-outside-hook/-/react-click-outside-hook-1.1.1.tgz#e64d354aee463ff7c5c8dca4c5e2fd947b16df5f"
-  integrity sha512-wIPef9ik68f/Tz/0uvuOZI7hE7XLOc2moKUGWu9c68LqYS8b0D9LnR7J9i0Uc0DiXZaJENlRqZpmaYJFhjADMA==
-
-react-detect-click-outside@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-detect-click-outside/-/react-detect-click-outside-1.1.2.tgz#e47e5b850412380d8b3f504dea544ed97ec8c972"
-  integrity sha512-BYavS0DoZ7JzTgCDQiYnh3F8jWr6FONBNWLzpFICbupW3rE4IgPOzeqPn4zO0s1C10kXF8X8xiHe0C+mYSJz5g==
-
 react-dom@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -1672,14 +1657,6 @@ react-dom@17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
-
-react-hot-keys@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/react-hot-keys/-/react-hot-keys-2.7.1.tgz#a811445e66551c9f5b0e6b130d12096a59688539"
-  integrity sha512-h2LfJGs450z58/DvKuzal1LetoEGjXUbcxJyKFvWOJPy+IRpQsyxZv7FYDAJ7W0my3ySI3sVB3h5xcgvMdxS1g==
-  dependencies:
-    hotkeys-js "^3.8.1"
-    prop-types "^15.7.2"
 
 react-icons@^4.3.1:
   version "4.3.1"
@@ -1941,10 +1918,10 @@ stylis@3.5.4:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
   integrity sha512-8/3pSmthWM7lsPBKv7NXkzn2Uc9W7NotcwGNpJaa3k7WMM1XDCA4MgT5k/8BIexd5ydZdboXtU90XH9Ec4Bv/Q==
 
-superjson@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/superjson/-/superjson-1.8.0.tgz#a002521450aaa1529feef65fc1dc314e47cc0598"
-  integrity sha512-8FWCa0T9JQ9kVax9nmRqEEebhbRGmU3IV1gevZWQGJRFmSNVN4hnyfb0858aWeEOoS3atwnhjYGleRQHTGI/lA==
+superjson@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/superjson/-/superjson-1.8.1.tgz#c0fe510b8ff71c3bde5733a125623994ca9ec608"
+  integrity sha512-RaBKdbsYj29Ky+XcdE11pJAyKXPrqiCV269koH2WAlpeHh/9qnK0ET84GiVWvnutiufyDolK/vS2jtdFYr341w==
   dependencies:
     debug "^4.3.1"
     lodash.clonedeep "^4.5.0"
