@@ -18,7 +18,7 @@ const Editor: React.FC<{ snips: SnipType[] | undefined; text?: string }> = ({
 
   return (
     <>
-      <Palette content={content} snips={snips} />
+      <Palette content={content} snips={snips} editor={EditorElement} />
       <S.Wrapper>
         <Numbers>
           <LineNumber className='language-plaintext'>&gt;</LineNumber>

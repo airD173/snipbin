@@ -42,7 +42,8 @@ const Palette: React.FC<{
   snip: SnipType
   content: string
   snips: SnipType[]
-}> = ({ snip, content, snips }) => {
+  editor: React.RefObject<HTMLTextAreaElement>
+}> = ({ snip, content, snips, editor }) => {
   const [open, setOpen] = React.useState(false)
   const [subMenu, setSubMenu] = React.useState('main')
 
@@ -72,6 +73,7 @@ const Palette: React.FC<{
     else if (open && subMenu === 'encrypt') encryptRef.current!.focus()
     else if (open && subMenu === 'slug') slugRef.current!.focus()
     else if (open && subMenu === 'snips') inputRef.current!.focus()
+    else if (!open) editor.current!.focus()
   }, [subMenu, open])
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {

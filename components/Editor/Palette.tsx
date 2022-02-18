@@ -39,10 +39,22 @@ import {
 
 import { Snip as SnipType } from '.prisma/client'
 
+export const Error = (msg: String) =>
+  toast.error(msg, {
+    position: 'bottom-center',
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  })
+
 const Palette: React.FC<{
   content: string
   snips: SnipType[] | undefined
-}> = ({ content, snips }) => {
+  editor: React.RefObject<HTMLTextAreaElement>
+}> = ({ content, snips, editor }) => {
   const [open, setOpen] = React.useState(false)
   const [subMenu, setSubMenu] = React.useState('slug')
 
@@ -72,6 +84,7 @@ const Palette: React.FC<{
     else if (open && subMenu === 'encrypt') encryptRef.current!.focus()
     else if (open && subMenu === 'slug') slugRef.current!.focus()
     else if (open && subMenu === 'snips') inputRef.current!.focus()
+    else if (!open) editor.current!.focus()
   }, [subMenu, open])
 
   const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
@@ -87,32 +100,30 @@ const Palette: React.FC<{
   const CreateSnip = async (slug: string) => {
     const language = await DetectLang(content)
 
-    password !== ''
-      ? await hash(password, 10, async (err, hash) => {
-          try {
-            await axios.post('/api/new', {
-              content: content,
-              slug: slug,
-              password: hash,
-              language: language.data.data,
-            })
-          } catch (err) {
-            toast.error('Error Creating Snip!', {
-              position: 'bottom-center',
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-            })
-          }
-        })
-      : await axios.post('/api/new', {
+    if (password !== '')
+      await hash(password, 10, async (err, hash) => {
+        try {
+          await axios.post('/api/new', {
+            content: content,
+            slug: slug,
+            password: hash,
+            language: language.data.data,
+          })
+        } catch (err) {
+          Error('Cannot Create Paste!')
+        }
+      })
+    else {
+      try {
+        await axios.post('/api/new', {
           content: content,
           slug: slug,
           language: language,
         })
+      } catch (err) {
+        return Error('Cannot Create Paste!')
+      }
+    }
 
     router.push(`/${slug}`)
   }
@@ -297,7 +308,7 @@ const Palette: React.FC<{
         </S.Container>
       )}
       <ToastContainer
-        position='bottom-center'
+        position='top-center'
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

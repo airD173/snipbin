@@ -2,6 +2,7 @@ import React from 'react'
 
 import * as S from './View.style'
 import { Wrapper } from '@components/Editor/Editor.style'
+import { Error } from '@components/Editor/Palette'
 import Palette from './Palette'
 
 import hljs from 'highlight.js'
@@ -27,17 +28,7 @@ const View: React.FC<{
 
   const ComparePassword = () => {
     return compare(passwordInput.current!.value, snip.password!, (err, res) =>
-      res
-        ? setDecrypted(true)
-        : toast.error('Invalid Password', {
-            position: 'bottom-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          })
+      res ? setDecrypted(true) : Error('Invalid Password')
     )
   }
 
@@ -79,7 +70,7 @@ const View: React.FC<{
           />
           <S.FakeInput type='submit' />
           <ToastContainer
-            position='bottom-center'
+            position='top-center'
             autoClose={5000}
             hideProgressBar={false}
             newestOnTop={false}
