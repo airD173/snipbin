@@ -10,21 +10,18 @@ const Header: React.FC = () => {
       <meta property='twitter:title' content='SnipBin' />
       <meta
         name='description'
-        content='Lightweight, beautiful, feature-rich and accessible pastebin aimed at fixing the shortcomings 
-of other PasteBins.'
+        content='Lightweight, beautiful, feature-rich and accessible pastebin aimed at fixing the shortcomings of other PasteBins.'
       />
       <meta property='og:type' content='website' />
       <meta property='og:url' content='https://snip.hxrsh.in' />
       <meta
         property='og:description'
-        content='Lightweight, beautiful, feature-rich and accessible pastebin aimed at fixing the shortcomings 
-of other PasteBins.'
+        content='Lightweight, beautiful, feature-rich and accessible pastebin aimed at fixing the shortcomings of other PasteBins.'
       />
       <meta property='twitter:url' content='https://snip.hxrsh.in' />
       <meta
         property='twitter:description'
-        content='Lightweight, beautiful, feature-rich and accessible pastebin aimed at fixing the shortcomings 
-of other PasteBins.'
+        content='Lightweight, beautiful, feature-rich and accessible pastebin aimed at fixing the shortcomings of other PasteBins.'
       />
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
