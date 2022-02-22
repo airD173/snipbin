@@ -41,7 +41,7 @@ I don't think that my API documentation is really good or anything, but
 it's understandable and clear which is a large step up from sites like
 PasteBin.
 
-You can view the API documentation at `https://snip.hxrsh.in/api-docs/`
+You can view the API documentation at `https://snip.hxrsh.in/api-docs.md/`
 
 ### Powerful
 
