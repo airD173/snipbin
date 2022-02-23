@@ -66,7 +66,6 @@ const Palette: React.FC<{
   }
 
   const parentRef = useArrowKeys({ selectors: 'a,input' })
-  useClickOutside('dialogue', Toggle)
 
   React.useEffect(() => {
     if (open && subMenu === 'main') inputRef.current!.focus()
